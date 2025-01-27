@@ -5,3 +5,20 @@
 #sinistra {
   height: 100vh;
 }
+.Hplaylist {
+  padding: 0;
+  width: 31%;
+}
+#parteCentrale {
+  padding: 2em;
+  height: 100vh;
+}
+h2 {
+  color: white;
+}
+.card h5 {
+  font-size: 13px;
+}
+.card p {
+  font-size: 11px;
+}
