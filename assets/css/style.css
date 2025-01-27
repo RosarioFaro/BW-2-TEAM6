@@ -5,20 +5,45 @@
 #sinistra {
   height: 100vh;
 }
+#annuncio {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(9deg, rgba(0, 0, 0, 1) 22%, rgba(38, 38, 38, 1) 57%, rgba(52, 52, 52, 1) 100%);
+  border-radius: 8px;
+}
+#annuncio.card {
+  background-color: transparent;
+}
 .Hplaylist {
   padding: 0;
   width: 31%;
+  background-color: #2c2c2c;
 }
 #parteCentrale {
   padding: 2em;
   height: 100vh;
+  background: rgb(36, 36, 36);
+  background: linear-gradient(0deg, rgba(36, 36, 36, 1) 39%, rgba(56, 56, 56, 1) 67%, rgba(82, 82, 82, 1) 100%);
 }
 h2 {
   color: white;
 }
-.card h5 {
+.card {
+  background: rgb(48, 48, 48);
+  background: linear-gradient(180deg, rgba(48, 48, 48, 1) 52%, rgba(34, 34, 34, 1) 91%);
+  color: white;
+}
+h5 {
   font-size: 13px;
+  color: white;
 }
 .card p {
   font-size: 11px;
+}
+.imgCard img {
+  border-radius: 8px;
+  padding: 5px;
+}
+.Profilo {
+  width: 30px;
+  height: 30px;
 }
