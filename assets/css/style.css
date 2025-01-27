@@ -10,8 +10,8 @@
   background: linear-gradient(9deg, rgba(0, 0, 0, 1) 22%, rgba(38, 38, 38, 1) 57%, rgba(52, 52, 52, 1) 100%);
   border-radius: 8px;
 }
-#annuncio.card {
-  background-color: transparent;
+#cardAnnuncio {
+  background-color: rgba(0, 0, 0, 0);
 }
 .Hplaylist {
   padding: 0;
