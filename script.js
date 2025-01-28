@@ -42,3 +42,5 @@ function fetchAlbum(apiUrl, nvolte) {
       console.error("Errore:", error.message);
     });
 }
+
+fetchAlbum(URL, 10);
