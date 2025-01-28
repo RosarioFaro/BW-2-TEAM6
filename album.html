@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous
+    " />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/album.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 p-0" id="sinistra">
+                <div class="d-flex flex-column menu h-100">
+                    <div class="p-3 text-white bg-black">
+                        <ul class="nav nav-pills flex-column mb-auto">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white d-flex align-items-center gap-2"
+                                    aria-current="page">
+                                    <i class="bi bi-house text-white"></i>
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link text-white d-flex align-items-center gap-2"><i
+                                        class="bi bi-search text-white"></i>
+                                    Cerca
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link text-white"><i class="bi bi-list text-white"></i>
+                                    La tua libreria
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link text-white"><i class="bi bi-plus-square-fill"></i> Crea
+                                    playlist </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link text-white"><i class="bi bi-heart-fill"></i> Brani che ti
+                                    piacciono </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link text-white"><i class="bi bi-bookmark-fill"></i> I tuoi
+                                    episodi </a>
+                            </li>
+                        </ul>
+                        <hr />
+                    </div>
+                    <div class="listPlaylist p-3 text-white bg-black overflow-y-scroll mb-5">
+                        <div class="listPersonal">
+                            <ul class="list-group mb-5">
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist</li>
+                                <li class="list-group-item text-white bg-transparent border-0">Playlist 1</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col overflow-y-scroll pt-3 px-0" id="parteCentrale">
+                <div class="row px-4">
+                    <div class="col">
+                        <a href="#" class="text-white"><i class="bi bi-caret-left-square"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-caret-right-square"></i></a>
+                    </div>
+                    <div class="col text-end">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle rounded-pill bg-black" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Nome utente
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-end pt-4 px-4">
+                    <div class="col-3">
+                        <img src="./assets/imgs/search/image-14.jpg" class="img-fluid" alt="" id="albumImg">
+                    </div>
+                    <div class="col-9 align-text-bottom">
+                        <p class="text-white fw-bold mb-0" id="album">ALBUM</p>
+                        <h2 id="albumTitle" class="text-white fw-bold pb-3 ps-1">Titolo Album</h2>
+                        <div class="d-flex">
+                            <img src="./assets/imgs/main/image-16.jpg" alt="" class="rounded-circle"
+                                id="roundedImgCentral">
+                            <p class="text-white mb-0 ps-2"><span class="fw-bold">Nome Artista</span> • Anno • brani,
+                                <span class="opacity-50">minutaggio
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row flex-column mt-4 mx-0 px-4" id="songList">
+                    <div class="col pt-4">
+                        <i class="bi bi-play-circle text-white rounded-circle"></i>
+                        <i class="bi bi-heart text-white fs-3 ps-3"></i>
+                        <i class="bi bi-arrow-down-circle text-white fs-3 ps-3"></i>
+                        <i class="bi bi-three-dots text-white fs-3 ps-3"> </i>
+                    </div>
+                    <div class="col pt-3">
+                        <table class="table table-borderless songListTable">
+                            <thead class="pb-4">
+                                <tr>
+                                    <th>#</th>
+                                    <th>TITOLO</th>
+                                    <th>RIPRODUZIONI</th>
+                                    <th><i class="bi bi-clock"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                                <tr class="mb-2">
+                                    <th class="pt-4">1</th>
+                                    <td class="pb-0 pt-4">
+                                        <div>
+                                            <a href="#">
+                                                <h5 class="songTitle mb-0">Titolo Canzone</h5>
+                                            </a>
+                                            <a href="#">
+                                                <p class="mb-0">Nome artista</p>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="pt-4">254.365</td>
+                                    <td class="pt-4">2:35</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="destra col-2 bg-black">
+                <div class="d-flex justify-content-between align-items-center py-2">
+                    <h5 class="mb-0">Attività amici</h5>
+                    <div>
+                        <i class="bi bi-person-plus text-white"></i>
+                        <i class="bi bi-x-lg text-white ms-2"></i>
+                    </div>
+                </div>
+                <div class="amici d-flex flex-wrap">
+                    <div class="Profilo rounded-circle">
+                        <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
+                    </div>
+                    <div class="testoAmici me-auto">
+                        <h5 class="text-white">Charlie Hookham</h5>
+                        <p class="text-white">Autore • Album</p>
+                        <div class="d-flex">
+                            <i class="bi bi-vinyl text-white"></i>
+                            <p class="text-white">Canzone</p>
+                        </div>
+                    </div>
+                    <div class="ora text-white">
+                        <p>4 ore</p>
+                    </div>
+                </div>
+                <div class="amici d-flex">
+                    <div class="Profilo rounded-circle">
+                        <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
+                    </div>
+                    <div class="testoAmici">
+                        <h5 class="text-white">lightdark02</h5>
+                        <p class="text-white">Autore • Album</p>
+                        <div class="d-flex">
+                            <i class="bi bi-music-note-beamed text-white"></i>
+                            <p class="text-white">Canzone</p>
+                        </div>
+                    </div>
+                    <div class="ora text-white">
+                        <p>8 ore</p>
+                    </div>
+                </div>
+                <div class="amici d-flex">
+                    <div class="Profilo rounded-circle">
+                        <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
+                    </div>
+                    <div class="testoAmici">
+                        <h5 class="text-white">Valeria Traverso</h5>
+                        <p class="text-white">Autore • Album</p>
+                        <div class="d-flex">
+                            <i class="bi bi-music-note-beamed text-white"></i>
+                            <p class="text-white">Canzone</p>
+                        </div>
+                    </div>
+                    <div class="ora text-white">
+                        <p>3 giorni</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <footer class="d-flex sticky-bottom z-1 position-absolute bg-black p-3">
+            <div class="musica">
+              <div class="copertina"></div>
+              <div class="nomeMusica"></div>
+              <i class="bi bi-heart text-white"></i>
+            </div>
+  
+            <div class="player">
+              <div class="bottoniMusic"></div>
+              <div class="barra"></div>
+            </div>
+            <div class="others">
+              <i class="bi bi-arrows-fullscreen text-white"></i>
+            </div>
+          </footer> -->
+            <footer class="fixed-bottom bg-black text-white py-2 position-absolute barra-lettore">
+                <div class="container-fluid d-flex align-items-center justify-content-between">
+                    <!-- Info Canzone -->
+                    <div class="d-flex align-items-center">
+                        <img src="" alt="copertina" class="img-fluid copertina-canzone" />
+                        <div class="ms-2">
+                            <p class="mb-0">Fat Funny Friend</p>
+                            <div class="text-secondary">Maddie Zahm</div>
+                        </div>
+                        <i class="bi bi-heart ms-3"></i>
+                    </div>
+
+                    <!-- Controlli Lettore -->
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-shuffle"></i>
+                            <i class="bi bi-skip-start-fill"></i>
+                            <i class="bi bi-play-circle-fill fs-3"></i>
+                            <i class="bi bi-skip-end-fill"></i>
+                            <i class="bi bi-repeat"></i>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 mt-1">
+                            <div id="tempo-corrente">0:58</div>
+                            <input type="range" id="barra-avanzamento" min="0" max="200" value="58"
+                                class="barra-scorrimento" />
+                            <div id="tempo-totale">3:20</div>
+                        </div>
+                    </div>
+
+                    <!-- Controlli Aggiuntivi -->
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="bi bi-volume-up"></i>
+                        <input type="range" id="barra-volume" min="0" max="100" value="50" class="barra-volume" />
+                        <i class="bi bi-arrows-fullscreen"></i>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="./album.js"></script>
+</body>
+
+</html>

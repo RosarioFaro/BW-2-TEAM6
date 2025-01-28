@@ -1,0 +1,95 @@
+#roundedImgCentral {
+  height: 4%;
+  width: 4%;
+}
+#albumTitle {
+  font-size: 5em;
+}
+#albumImg {
+  box-shadow: 7px 2px 46px 4px rgba(0, 0, 0, 0.6);
+}
+#album {
+  font-size: 0.8em;
+}
+#parteCentrale {
+  background: linear-gradient(180deg, rgba(229, 198, 82, 1) 0%, rgba(31, 29, 20, 1) 50%, rgba(18, 18, 18, 1) 100%);
+}
+#songList {
+  background: linear-gradient(180deg, #5a4e20 0%, #1f1c14 50%, rgba(18, 18, 18, 1) 100%);
+}
+.songListTable {
+  --bs-table-bg: transparent;
+  --bs-table-color: white;
+}
+table {
+  opacity: 65%;
+}
+.bi-play-circle {
+  font-size: 3em;
+}
+.bi-caret-left-square {
+  font-size: 1.3em;
+  margin-right: 0.5em;
+}
+.bi-caret-right-square {
+  font-size: 1.3em;
+}
+/* FORMATTAZIONE TABELLA CANZONI */
+thead {
+  border-bottom: 1px solid grey;
+}
+thead tr th {
+  font-weight: 400;
+}
+thead tr th:nth-child(3) {
+  text-align: right;
+  padding-right: 7.8em;
+}
+thead tr th:last-child {
+  text-align: right;
+  padding-right: 3em;
+}
+thead tr th:first-child {
+  padding-left: 1em;
+  width: 5%;
+}
+tbody tr th:first-child {
+  padding-left: 1em;
+  width: 5%;
+  padding-bottom: 0;
+}
+
+tbody tr td:nth-child(3) {
+  text-align: right;
+  padding-right: 10em;
+  padding-bottom: 0;
+  font-size: 0.8em;
+}
+tbody tr th:nth-child(3) {
+  text-align: right;
+  padding-right: 10em;
+  padding-bottom: 0;
+}
+tbody tr td:last-child {
+  text-align: right;
+  padding-right: 3em;
+  padding-bottom: 0;
+}
+tbody tr th:last-child {
+  text-align: right;
+  padding-right: 3em;
+  padding-bottom: 0;
+}
+
+.table tbody tr td div .songTitle {
+  font-weight: bold;
+  font-size: 0.8em;
+}
+.table tbody tr td div a {
+  text-decoration: none;
+  color: white;
+}
+.table tbody tr td div p {
+  font-size: 0.6em;
+  padding-top: 0.5em;
+}
