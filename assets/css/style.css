@@ -1,75 +1,106 @@
+#sinistra {
+  height: 100vh;
+}
+
 .listPersonal {
   height: 100vh;
 }
 
-#sinistra {
-  height: 100vh;
+.listPersonal {
+  margin-bottom: 15em;
 }
-#annuncio {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(9deg, rgba(0, 0, 0, 1) 22%, rgba(38, 38, 38, 1) 57%, rgba(52, 52, 52, 1) 100%);
-  border-radius: 8px;
+#consigliati {
+  margin-bottom: 5em;
 }
-.Hplaylist {
-  padding: 0;
-  width: 31%;
-  background-color: #2c2c2c;
-}
+
 #parteCentrale {
   padding: 2em;
   height: 100vh;
   background: rgb(36, 36, 36);
   background: linear-gradient(0deg, rgba(36, 36, 36, 1) 39%, rgba(56, 56, 56, 1) 67%, rgba(82, 82, 82, 1) 100%);
 }
+
+#attivitaCol {
+  transition: transform 0.3s ease;
+}
+
+#attivitaCol.scomparsa {
+  transform: translateX(100%);
+}
+
+#annuncio {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(9deg, rgba(0, 0, 0, 1) 22%, rgba(38, 38, 38, 1) 57%, rgba(52, 52, 52, 1) 100%);
+  border-radius: 8px;
+}
+
+.Hplaylist {
+  padding: 0;
+  width: 31%;
+  background-color: #2c2c2c;
+}
+
 h2 {
   color: white;
 }
+
 .card {
   background: rgb(48, 48, 48);
   background: linear-gradient(180deg, rgba(48, 48, 48, 1) 52%, rgba(34, 34, 34, 1) 91%);
   color: white;
 }
+
 h5 {
   font-size: 11px;
   color: white;
 }
+
 .card p {
   font-size: 8px;
 }
+
 .imgCard img {
   border-radius: 8px;
   padding: 5px;
 }
+
 .Profilo {
   width: 30px;
   height: 30px;
   margin-right: 10px;
 }
+
 .testoAmici h5 {
   margin-bottom: 1%;
 }
+
 .testoAmici i {
   margin-right: 4px;
   font-size: 8px;
 }
+
 .testoAmici p {
   font-size: 8px;
   margin-bottom: 1%;
 }
+
 .amici {
   margin-top: 2em;
   position: relative;
 }
+
 .ora {
   font-size: 11px;
   position: absolute;
   right: 0;
   top: -5px;
 }
+
 .barra-volume {
   width: 100px;
   accent-color: #1db954;
 }
+
 .barra-lettore {
   border-top: 1px solid #222;
 }

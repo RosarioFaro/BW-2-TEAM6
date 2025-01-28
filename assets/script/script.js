@@ -44,3 +44,8 @@ function fetchAlbum(apiUrl, nvolte) {
 }
 
 fetchAlbum(URL, 10);
+
+document.getElementById("toggleFriendlist").addEventListener("click", function () {
+  let col = document.getElementById("attivitaCol");
+  col.classList.toggle("scomparsa"); // Aggiunge o rimuove la classe per nascondere/mostrare la colonna
+});
