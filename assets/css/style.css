@@ -33,11 +33,11 @@ h2 {
   color: white;
 }
 h5 {
-  font-size: 13px;
+  font-size: 11px;
   color: white;
 }
 .card p {
-  font-size: 11px;
+  font-size: 8px;
 }
 .imgCard img {
   border-radius: 8px;
@@ -46,4 +46,26 @@ h5 {
 .Profilo {
   width: 30px;
   height: 30px;
+  margin-right: 10px;
+}
+.testoAmici h5 {
+  margin-bottom: 1%;
+}
+.testoAmici i {
+  margin-right: 4px;
+  font-size: 8px;
+}
+.testoAmici p {
+  font-size: 8px;
+  margin-bottom: 1%;
+}
+.amici {
+  margin-top: 2em;
+  position: relative;
+}
+.ora {
+  font-size: 11px;
+  position: absolute;
+  right: 0;
+  top: -5px;
 }
