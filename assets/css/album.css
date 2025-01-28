@@ -19,10 +19,7 @@
 }
 .songListTable {
   --bs-table-bg: transparent;
-  --bs-table-color: white;
-}
-table {
-  opacity: 65%;
+  --bs-table-color: grey;
 }
 .bi-play-circle {
   font-size: 3em;
@@ -87,7 +84,7 @@ tbody tr th:last-child {
 }
 .table tbody tr td div a {
   text-decoration: none;
-  color: white;
+  color: grey;
 }
 .table tbody tr td div p {
   font-size: 0.6em;
