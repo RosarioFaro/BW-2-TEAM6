@@ -26,7 +26,7 @@ function fetchAlbum(apiUrl, nvolte) {
                 <img src="${album.album.cover_medium}" class="card-img-top" alt="${album.title_short}" />
               </div>
               <div class="card-body">
-                <h5 class="card-title">${album.title}</h5>
+                <h5 class="card-title">${album.title_short}</h5>
                 <p class="card-text">${album.album.title}</p>
               </div>
             </div>

@@ -154,63 +154,7 @@
             </div>
           </div>
           <h2>Altro di ciò che ti piace</h2>
-          <div class="row mb-5 gap-4 justify-content-evenly" id="consigliati">
-            <div class="col-2 p-0">
-              <div class="card">
-                <div class="imgCard">
-                  <img src="./assets/imgs/main/image-12.jpg" class="card-img-top" alt="..." />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-2 p-0">
-              <div class="card">
-                <div class="imgCard">
-                  <img src="./assets/imgs/main/image-12.jpg" class="card-img-top" alt="..." />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-2 p-0">
-              <div class="card">
-                <div class="imgCard">
-                  <img src="./assets/imgs/main/image-12.jpg" class="card-img-top" alt="..." />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-2 p-0">
-              <div class="card">
-                <div class="imgCard">
-                  <img src="./assets/imgs/main/image-12.jpg" class="card-img-top" alt="..." />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-2 p-0">
-              <div class="card">
-                <div class="imgCard">
-                  <img src="./assets/imgs/main/image-12.jpg" class="card-img-top" alt="..." />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="row mb-5 gap-4 justify-content-evenly" id="consigliati"></div>
         </div>
         <div class="destra col-2 bg-black">
           <div class="d-flex justify-content-between align-items-center py-2">
@@ -269,7 +213,7 @@
             </div>
           </div>
         </div>
-        <footer class="d-flex sticky-bottom z-1 position-absolute bg-black p-3">
+        <!-- <footer class="d-flex sticky-bottom z-1 position-absolute bg-black p-3">
           <div class="musica">
             <div class="copertina"></div>
             <div class="nomeMusica"></div>
@@ -282,6 +226,42 @@
           </div>
           <div class="others">
             <i class="bi bi-arrows-fullscreen text-white"></i>
+          </div>
+        </footer> -->
+        <footer class="fixed-bottom bg-black text-white py-2 position-absolute barra-lettore">
+          <div class="container-fluid d-flex align-items-center justify-content-between">
+            <!-- Info Canzone -->
+            <div class="d-flex align-items-center">
+              <img src="" alt="copertina" class="img-fluid copertina-canzone" />
+              <div class="ms-2">
+                <p class="mb-0">Fat Funny Friend</p>
+                <div class="text-secondary">Maddie Zahm</div>
+              </div>
+              <i class="bi bi-heart ms-3"></i>
+            </div>
+
+            <!-- Controlli Lettore -->
+            <div class="d-flex flex-column align-items-center">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-shuffle"></i>
+                <i class="bi bi-skip-start-fill"></i>
+                <i class="bi bi-play-circle-fill fs-3"></i>
+                <i class="bi bi-skip-end-fill"></i>
+                <i class="bi bi-repeat"></i>
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-1">
+                <div id="tempo-corrente">0:58</div>
+                <input type="range" id="barra-avanzamento" min="0" max="200" value="58" class="barra-scorrimento" />
+                <div id="tempo-totale">3:20</div>
+              </div>
+            </div>
+
+            <!-- Controlli Aggiuntivi -->
+            <div class="d-flex align-items-center gap-3">
+              <i class="bi bi-volume-up"></i>
+              <input type="range" id="barra-volume" min="0" max="100" value="50" class="barra-volume" />
+              <i class="bi bi-arrows-fullscreen"></i>
+            </div>
           </div>
         </footer>
       </div>

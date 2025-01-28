@@ -66,3 +66,10 @@ h5 {
   right: 0;
   top: -5px;
 }
+.barra-volume {
+  width: 100px;
+  accent-color: #1db954;
+}
+.barra-lettore {
+  border-top: 1px solid #222;
+}
