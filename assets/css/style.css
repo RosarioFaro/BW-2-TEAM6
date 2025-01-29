@@ -29,7 +29,18 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+#albumCarousel h6 {
+  font-size: 1vw;
+}
+#albumCarousel h2 {
+  font-size: 2.5vw;
+}
+#albumCarousel p {
+  font-size: 1vw;
+}
+#albumCarousel button {
+  font-size: 1vw;
+}
 #attivitaCol {
   transition: transform 0.3s ease;
 }
@@ -42,6 +53,9 @@
   background: rgb(0, 0, 0);
   background: linear-gradient(9deg, rgba(0, 0, 0, 1) 22%, rgba(38, 38, 38, 1) 57%, rgba(52, 52, 52, 1) 100%);
   border-radius: 8px;
+}
+h2 {
+  font-size: 2.5vw;
 }
 
 .Hplaylist {
@@ -164,6 +178,6 @@ footer i:active {
   .Hplaylist p {
     margin-bottom: 0;
     padding: 8px;
-    font-size: 15px;
+    font-size: 1vw;
   }
 }
