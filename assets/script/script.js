@@ -18,17 +18,19 @@ function fetchAlbum(apiUrl, nvolte) {
 
         randomObjects.forEach((album) => {
           const cardDiv = document.createElement("div");
-          cardDiv.className = "col-9 col-md-4 col-lg-2 p-0 overflow-hidden cardDiv";
+          cardDiv.className = "col-5 col-md-4 col-lg-2 p-0 overflow-hidden cardDiv";
 
           cardDiv.innerHTML = `
           <div class="card">
-          <div class="imgCard">
-            <img src="${album.album.cover_xl}" class="card-img-top" alt="${album.title_short}" />
-          </div>
-          <div class="card-body">
-            <h6 class="card-title">${album.title_short}</h6>
-            <h5 class="card-text">${album.album.title}</h5>
-          </div>
+          <a href=album.html?id=${album.album.id} class="text-decoration-none text-white">
+            <div class="imgCard">
+              <img src="${album.album.cover_medium}" class="card-img-top" alt="${album.title_short}" />
+            </div>
+            <div class="card-body">
+              <h6 class="card-title">${album.title_short}</h6>
+              </a>
+              <p class="card-text">${album.album.title}</p>
+            </div>
           </div>`;
 
           container.appendChild(cardDiv);

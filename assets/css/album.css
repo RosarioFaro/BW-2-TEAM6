@@ -90,3 +90,29 @@ tbody tr th:last-child {
   font-size: 0.6em;
   padding-top: 0.5em;
 }
+
+/* PLAYER */
+.barra-volume {
+  width: 100px;
+  accent-color: #1db954;
+}
+
+.barra-lettore {
+  border-top: 1px solid #222;
+}
+
+footer i {
+  cursor: pointer;
+}
+
+footer i:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+  color: #cfcfcf;
+}
+
+footer i:active {
+  transform: scale(0.9);
+  transition: 0.3s ease;
+  color: #cfcfcf;
+}
