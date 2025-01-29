@@ -85,10 +85,10 @@ fetch(URL, {
       <div class="col-9 align-text-bottom">
         <p class="text-white fw-bold mb-0" id="album">ALBUM</p>
         <h2 id="albumTitle" class="text-white fw-bold pb-3 ps-1">${album.title}</h2>
-        <div class="d-flex">
+        <div class="d-flex align-items-center">
           <img src="${album.artist.picture_xl}" alt="" class="rounded-circle" id="roundedImgCentral">
-          <p class="text-white mb-0 ps-2"><span class="fw-bold">${album.artist.name}</span> • ${album.release_date} • ${album.tracks.data.length} brani,
-            <span class="opacity-50">minutaggio</span>
+          <p id="albumParag"  class="text-white mb-0 ps-2"><span class="fw-bold">${album.artist.name}</span> • ${album.release_date} • ${album.tracks.data.length} brani,
+            <span class="opacity-50">${album.duration}</span>
           </p>
         </div>
       </div>`;
