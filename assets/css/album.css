@@ -37,9 +37,7 @@
 .bi-caret-right-square {
   font-size: 1.3em;
 }
-.dropdown-menu {
-  --bs-dropdown-bg: black;
-}
+
 /* FORMATTAZIONE TABELLA CANZONI */
 thead {
   border-bottom: 1px solid grey;
