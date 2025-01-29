@@ -101,12 +101,12 @@ fetch(URL, {
           <td class="pt-4">${(ele.rank || "N/A").toLocaleString()}</td>
           <td class="pt-4">${formatTime(ele.duration)}</td>`;
       tbody.appendChild(tr);
-      trackElements.push(tr.querySelector(".play-track")); // Salviamo la traccia nell'array
+      trackElements.push(tr.querySelector(".play-track"));
     });
 
     /* FUNZIONE PER RIPRODURRE UNA TRACCIA */
     function playTrack(index) {
-      if (index >= trackElements.length) return; // Se finisce la playlist, si ferma
+      if (index >= trackElements.length) return;
 
       const track = trackElements[index];
       const title = track.getAttribute("data-title");
@@ -126,7 +126,7 @@ fetch(URL, {
       isPlaying = true;
       playBtn.classList.replace("bi-play-circle-fill", "bi-pause-circle-fill");
 
-      currentTrackIndex = index; // Aggiorna l'indice della traccia corrente
+      currentTrackIndex = index;
     }
 
     /* AVVIARE LA TRACCIA QUANDO CLICCATA */
