@@ -1,0 +1,418 @@
+#sinistra {
+  height: 100vh;
+}
+
+.listPersonal {
+  height: 100vh;
+}
+
+.listPersonal {
+  margin-bottom: 15em;
+}
+
+#consigliati {
+  margin-bottom: 5em;
+}
+
+#parteCentrale {
+  padding: 0;
+  height: 100vh;
+  background: rgb(36, 36, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(36, 36, 36, 1) 39%,
+    rgba(56, 56, 56, 1) 67%,
+    rgba(82, 82, 82, 1) 100%
+  );
+}
+
+#attivitaCol {
+  transition: transform 0.3s ease;
+}
+
+h5 {
+  font-size: 11px;
+  color: white;
+}
+
+.Profilo {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.testoAmici h5 {
+  margin-bottom: 1%;
+}
+
+.testoAmici i {
+  margin-right: 4px;
+  font-size: 8px;
+}
+
+.testoAmici p {
+  font-size: 8px;
+  margin-bottom: 1%;
+}
+
+.amici {
+  margin-top: 2em;
+  position: relative;
+}
+
+.ora {
+  font-size: 11px;
+  position: absolute;
+  right: 0;
+  top: -5px;
+}
+
+.barra-volume {
+  width: 100px;
+  accent-color: #1db954;
+}
+
+.artist-header {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.artist-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.artist-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+.artist-info {
+  z-index: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.artist-info h1 {
+  font-size: 80px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.artist-info p {
+  font-size: 18px;
+  color: lightgray;
+}
+
+.artist-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.artist-buttons .btn-success {
+  font-size: 16px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  background-color: #1db954;
+  border: none;
+}
+
+.artist-buttons .btn-success:hover {
+  background-color: #1ed760;
+}
+
+.artist-buttons .btn-outline-light {
+  font-size: 16px;
+  padding: 12px 15px;
+  border-radius: 30px;
+  font-weight: bold;
+  border: 1px solid white;
+  color: white;
+}
+
+.artist-buttons .btn-outline-light:hover {
+  background-color: white;
+  color: black;
+}
+
+.artist-header {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.artist-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(50%);
+  z-index: -1;
+}
+
+.artist-header {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.artist-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(50%);
+  z-index: -1;
+}
+
+.artist-header {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: end;
+  padding: 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.artist-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(50%);
+  z-index: -1;
+}
+
+.artist-info {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding-left: 60px;
+  max-width: 600px;
+}
+
+.artist-info h1 {
+  font-size: 80px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.artist-info p {
+  font-size: 18px;
+  color: lightgray;
+  margin: 0;
+}
+
+.btn.btn-success.btn-lg {
+  background-color: #1db954;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: rgb(0, 0, 0);
+  border: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  margin-left: 15px;
+}
+
+.btn.btn-success.btn-lg:hover {
+  background-color: #1ed760;
+  transform: scale(1.1);
+}
+
+.artist-buttons .btn-outline-light {
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 1px;
+  font-weight: bold;
+  border: 1px solid white;
+  color: white;
+}
+
+.song-list-container {
+  width: 60%;
+  float: left;
+  padding: 20px;
+  background: transparent;
+  color: white;
+  border-radius: 10px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+#song-list {
+  list-style: none;
+  padding: 0;
+}
+
+.song-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease-in-out;
+}
+
+.song-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.song-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.song-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.song-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.song-plays {
+  font-size: 14px;
+  color: gray;
+}
+
+.song-duration {
+  font-size: 14px;
+  color: lightgray;
+}
+.load-more-btn {
+  display: block;
+  width: 200px;
+  margin-bottom: 90px;
+  padding: 12px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid transparent;
+  color: white;
+  background: transparent;
+  border-radius: 1px;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.load-more-btn:hover {
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+footer i {
+  cursor: pointer;
+}
+
+footer i:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+  color: #cfcfcf;
+}
+
+footer i:active {
+  transform: scale(0.9);
+  transition: 0.3s ease;
+  color: #cfcfcf;
+}
+.small-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.small-circular-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+.liked-songs-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.liked-text {
+  font-size: 14px;
+  color: lightgray;
+}
+.liked-song-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+}
