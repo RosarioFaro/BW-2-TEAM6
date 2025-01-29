@@ -1,357 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous
+    "
+    />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bootstrap demo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous
-    " />
-  <link rel="stylesheet" href="./assets/css/circular-font.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
-
-<body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-2 d-none d-md-block p-0" id="sinistra">
-        <div class="d-flex flex-column h-100">
-          <div class="p-3 text-white bg-black">
-            <ul id="navList" class="nav nav-pills flex-column mb-auto">
-              <li class="nav-item">
-                <a href="#" class="nav-link text-white d-flex align-items-center gap-2" aria-current="page">
-                  <i class="bi bi-house text-white"></i>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link text-white d-flex align-items-center gap-2"><i
-                    class="bi bi-search text-white"></i>
-                  Cerca
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link text-white"><i class="bi bi-list text-white"></i>
-                  La tua libreria
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link text-white"><i class="bi bi-plus-square-fill"></i> Crea playlist </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link text-white"><i class="bi bi-heart-fill"></i> Brani che ti piacciono </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link text-white"><i class="bi bi-bookmark-fill"></i> I tuoi episodi </a>
-              </li>
-            </ul>
-            <hr />
-          </div>
-          <div class="listPlaylist p-3 text-white bg-black overflow-y-scroll">
-            <div class="listPersonal">
-              <ul class="list-group">
-                <li class="list-group-item text-white bg-transparent border-0">
-                  early stage emily syndrome (sett-ott 2022)
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2 d-none d-md-block p-0" id="sinistra">
+          <div class="d-flex flex-column h-100">
+            <div class="p-3 text-white bg-black">
+              <ul id="navList" class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                  <a href="/index.html" class="nav-link text-white d-flex align-items-center gap-2" aria-current="page">
+                    <i class="bi bi-house text-white"></i>
+                    Home
+                  </a>
                 </li>
-                <li class="list-group-item text-white bg-transparent border-0">Be The Young</li>
-                <li class="list-group-item text-white bg-transparent border-0">"..." cit. Kimiko (lug-ago 2022)</li>
-                <li class="list-group-item text-white bg-transparent border-0">saggio vibes 🎭🎭</li>
-                <li class="list-group-item text-white bg-transparent border-0">
-                  main character energy (mag-giu 2022)
+                <li>
+                  <a href="./search.html" class="nav-link text-white d-flex align-items-center gap-2"
+                    ><i class="bi bi-search text-white"></i>
+                    Cerca
+                  </a>
                 </li>
-                <li class="list-group-item text-white bg-transparent border-0">that fucking mood 🔪🎭</li>
-                <li class="list-group-item text-white bg-transparent border-0">
-                  VEE, CARLOTTA E GIACOMO VANNO A BOSIO
+                <li>
+                  <a href="#" class="nav-link text-white"
+                    ><i class="bi bi-list text-white"></i>
+                    La tua libreria
+                  </a>
                 </li>
-                <li class="list-group-item text-white bg-transparent border-0">
-                  An Emily Winchester kind of mood 🔪🖕
+                <li>
+                  <a href="#" class="nav-link text-white"><i class="bi bi-plus-square-fill"></i> Crea playlist </a>
                 </li>
-                <li class="list-group-item text-white bg-transparent border-0">landing page (mar-apr 2022)</li>
-                <li class="list-group-item text-white bg-transparent border-0">2021 lol</li>
-                <li class="list-group-item text-white bg-transparent border-0">
-                  cosa cazzo vuol dire questa affermazione (gen-feb 2022)
+                <li>
+                  <a href="#" class="nav-link text-white"><i class="bi bi-heart-fill"></i> Brani che ti piacciono </a>
                 </li>
-                <li class="list-group-item text-white bg-transparent border-0">honey and glass (nov-dic 2021)</li>
-                <li class="list-group-item text-white bg-transparent border-0">(Revenge) Training Arc 🎭</li>
-                <li class="list-group-item text-white bg-transparent border-0">Lidia 🤙 Emily</li>
-                <li class="list-group-item text-white bg-transparent border-0">
-                  minecraft e nintendo switch (set-ott 2021)
+                <li>
+                  <a href="#" class="nav-link text-white"><i class="bi bi-bookmark-fill"></i> I tuoi episodi </a>
                 </li>
-                <li class="list-group-item text-white bg-transparent border-0">
-                  silvano d'orba? I hardly know her (lug-ago 2021)
-                </li>
-                <li class="list-group-item text-white bg-transparent border-0">Culo 2021 🎼</li>
-                <li class="list-group-item text-white bg-transparent border-0">Fraq Quintale Mix</li>
               </ul>
+              <hr />
+            </div>
+            <div class="listPlaylist p-3 text-white bg-black overflow-y-scroll">
+              <div class="listPersonal">
+                <ul class="list-group">
+                  <li class="list-group-item text-white bg-transparent border-0">
+                    early stage emily syndrome (sett-ott 2022)
+                  </li>
+                  <li class="list-group-item text-white bg-transparent border-0">Be The Young</li>
+                  <li class="list-group-item text-white bg-transparent border-0">"..." cit. Kimiko (lug-ago 2022)</li>
+                  <li class="list-group-item text-white bg-transparent border-0">saggio vibes 🎭🎭</li>
+                  <li class="list-group-item text-white bg-transparent border-0">
+                    main character energy (mag-giu 2022)
+                  </li>
+                  <li class="list-group-item text-white bg-transparent border-0">that fucking mood 🔪🎭</li>
+                  <li class="list-group-item text-white bg-transparent border-0">
+                    VEE, CARLOTTA E GIACOMO VANNO A BOSIO
+                  </li>
+                  <li class="list-group-item text-white bg-transparent border-0">
+                    An Emily Winchester kind of mood 🔪🖕
+                  </li>
+                  <li class="list-group-item text-white bg-transparent border-0">landing page (mar-apr 2022)</li>
+                  <li class="list-group-item text-white bg-transparent border-0">2021 lol</li>
+                  <li class="list-group-item text-white bg-transparent border-0">
+                    cosa cazzo vuol dire questa affermazione (gen-feb 2022)
+                  </li>
+                  <li class="list-group-item text-white bg-transparent border-0">honey and glass (nov-dic 2021)</li>
+                  <li class="list-group-item text-white bg-transparent border-0">(Revenge) Training Arc 🎭</li>
+                  <li class="list-group-item text-white bg-transparent border-0">Lidia 🤙 Emily</li>
+                  <li class="list-group-item text-white bg-transparent border-0">
+                    minecraft e nintendo switch (set-ott 2021)
+                  </li>
+                  <li class="list-group-item text-white bg-transparent border-0">
+                    silvano d'orba? I hardly know her (lug-ago 2021)
+                  </li>
+                  <li class="list-group-item text-white bg-transparent border-0">Culo 2021 🎼</li>
+                  <li class="list-group-item text-white bg-transparent border-0">Fraq Quintale Mix</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col overflow-y-scroll" id="parteCentrale">
-        <div class="row ">
-          <div class="col">
-            <a href="#" class="text-white "><i class="bi bi-caret-left-square"></i></a>
-            <a href="#" class="text-white"><i class="bi bi-caret-right-square"></i></a>
+        <div class="col overflow-y-scroll" id="parteCentrale">
+          <div class="row px-4">
+            <div class="col">
+              <a href="#" class="text-white d-none d-md-inline-block"><i class="bi bi-caret-left-square"></i></a>
+              <a href="#" class="text-white d-none d-md-inline-block"><i class="bi bi-caret-right-square"></i></a>
+            </div>
+            <div class="col text-end d-flex align-items-center justify-content-end">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle rounded-pill bg-black"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Nome utente
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-white" href="#">Account</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Setting</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Logout</a></li>
+                </ul>
+              </div>
+              <div class="ms-3 p-0 d-none d-md-block" id="btnMostraAmici">
+                <i class="bi bi-arrow-right-short h2 text-white"></i>
+              </div>
+            </div>
           </div>
-          <div class="col text-end">
-            <div class="dropdown">
-              <button id="dropdownButton" class="btn btn-secondary dropdown-toggle rounded-pill bg-black" type="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Nome utente
+          <div class="container my-3 d-none d-md-block" id="annuncio">
+            <div id="albumCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row album-card p-4 align-items-center">
+                    <div class="col-md-4">
+                      <img
+                        src="https://cdn-images.dzcdn.net/images/cover/dea12159c1eb687227bd4950543c9031/1000x1000-000000-80-0-0.jpg"
+                        alt="Album Cover"
+                        class="img-fluid rounded"
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <h6 class="text-uppercase text-white">Album</h6>
+                      <h2 class="text-white fw-bold">Tuesday Night Music Club</h2>
+                      <p class="text-white">Sheryl Crow</p>
+                      <p class="text-white">Ascolta ora il nuovo singolo!</p>
+                      <div class="d-flex gap-3">
+                        <button class="btn btn-success px-4">Play</button>
+                        <button class="btn btn-outline-light px-4">Salva</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="row album-card p-4 align-items-center">
+                    <div class="col-md-4">
+                      <img
+                        src="https://cdn-images.dzcdn.net/images/cover/eb2216f235259d37fa6ad5467e04a521/1000x1000-000000-80-0-0.jpg"
+                        alt="Album Cover"
+                        class="img-fluid rounded"
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <h6 class="text-uppercase text-white">Album</h6>
+                      <h2 class="text-white fw-bold">Amor Na Praia</h2>
+                      <p class="text-white">NATTAN</p>
+                      <p class="text-white">Non perderti questa hit!</p>
+                      <div class="d-flex gap-3">
+                        <button class="btn btn-success px-4">Play</button>
+                        <button class="btn btn-outline-light px-4">Salva</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="row album-card p-4 align-items-center">
+                    <div class="col-md-4">
+                      <img
+                        src="https://cdn-images.dzcdn.net/images/cover/f2b7397f84cc51d842acfe82fccd3490/1000x1000-000000-80-0-0.jpg"
+                        alt="Album Cover"
+                        class="img-fluid rounded"
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <h6 class="text-uppercase text-white">Album</h6>
+                      <h2 class="text-white fw-bold">"Clamo Jesus"</h2>
+                      <p class="text-white">Paulo Cesar Baruk</p>
+                      <p class="text-white">Scopri questo brano!</p>
+                      <div class="d-flex gap-3">
+                        <button class="btn btn-success px-4">Play</button>
+                        <button class="btn btn-outline-light px-4">Salva</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button class="carousel-control-prev" type="button" data-bs-target="#albumCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
               </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item text-white" href="#">Account</a></li>
-                <li><a class="dropdown-item text-white" href="#">Setting</a></li>
-                <li><a class="dropdown-item text-white" href="#">Logout</a></li>
-              </ul>
+              <button class="carousel-control-next" type="button" data-bs-target="#albumCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
             </div>
           </div>
-        </div>
-        <div class="container my-3 d-none d-md-block" id="annuncio">
-          <div id="albumCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row album-card p-4 align-items-center">
-                  <div class="col-md-4">
-                    <img src="./assets/imgs/main/image-19.jpg" alt="Album Cover" class="img-fluid rounded" />
-                  </div>
-                  <div class="col-md-8">
-                    <h6 class="text-uppercase text-secondary">Album</h6>
-                    <h2 class="text-white fw-bold">Titolo Album 1</h2>
-                    <p class="text-white">Cantante 1</p>
-                    <p class="text-white">Ascolta ora il nuovo singolo!</p>
-                    <div class="d-flex gap-3">
-                      <button class="btn btn-success px-4">Play</button>
-                      <button class="btn btn-outline-light px-4">Salva</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <div class="carousel-item">
-                <div class="row album-card p-4 align-items-center">
-                  <div class="col-md-4">
-                    <img src="./assets/imgs/main/image-10.jpg" alt="Album Cover" class="img-fluid rounded" />
-                  </div>
-                  <div class="col-md-8">
-                    <h6 class="text-uppercase text-secondary">Album</h6>
-                    <h2 class="text-white fw-bold">Titolo Album 2</h2>
-                    <p class="text-white">Cantante 2</p>
-                    <p class="text-white">Non perderti questa hit!</p>
-                    <div class="d-flex gap-3">
-                      <button class="btn btn-success px-4">Play</button>
-                      <button class="btn btn-outline-light px-4">Salva</button>
-                    </div>
-                  </div>
-                </div>
+          <h2>Buonasera</h2>
+          <div class="row flex-wrap justify-content-between m-auto" id="playlist">
+            <div class="Hplaylist d-flex align-items-center rounded col-6 col-md-4 mb-3">
+              <div class="w-25">
+                <img src="assets/imgs/main/image-1.jpg" alt="musica" class="img-fluid rounded-start" />
               </div>
-
-              <div class="carousel-item">
-                <div class="row album-card p-4 align-items-center">
-                  <div class="col-md-4">
-                    <img src="./assets/imgs/main/image-16.jpg" alt="Album Cover" class="img-fluid rounded" />
-                  </div>
-                  <div class="col-md-8">
-                    <h6 class="text-uppercase text-secondary">Album</h6>
-                    <h2 class="text-white fw-bold">Titolo Album 3</h2>
-                    <p class="text-white">Cantante 3</p>
-                    <p class="text-white">Scopri questo brano!</p>
-                    <div class="d-flex gap-3">
-                      <button class="btn btn-success px-4">Play</button>
-                      <button class="btn btn-outline-light px-4">Salva</button>
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <p class="text-white pb-0">early stage emily syndrome</p>
+                <p class="text-white pt-0">(sett-ott 2022)</p>
               </div>
             </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#albumCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#albumCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </button>
+            <div class="Hplaylist d-flex align-items-center rounded col-6 col-md-4 mb-3">
+              <div class="w-25">
+                <img src="assets/imgs/main/image-2.jpg" alt="musica" class="img-fluid rounded-start" />
+              </div>
+              <div>
+                <p class="text-white">Be The Young</p>
+              </div>
+            </div>
+            <div class="Hplaylist d-flex align-items-center rounded col-6 col-md-4 mb-3">
+              <div class="w-25">
+                <img src="assets/imgs/main/image-3.jpg" alt="musica" class="img-fluid rounded-start" />
+              </div>
+              <div>
+                <p class="text-white">saggio vibes 🎭🎭</p>
+              </div>
+            </div>
+            <div class="Hplaylist d-flex align-items-center rounded col-6 col-md-4 mb-2">
+              <div class="w-25">
+                <img src="assets/imgs/main/image-4.jpg" alt="musica" class="img-fluid rounded-start" />
+              </div>
+              <div>
+                <p class="text-white">Brani che ti piacciono</p>
+              </div>
+            </div>
+            <div class="Hplaylist d-flex align-items-center rounded col-6 col-md-4 mb-2">
+              <div class="w-25">
+                <img src="assets/imgs/main/image-5.jpg" alt="musica" class="img-fluid rounded-start" />
+              </div>
+              <div>
+                <p class="text-white">2021 lol</p>
+              </div>
+            </div>
+            <div class="Hplaylist d-flex align-items-center rounded col-6 col-md-4 mb-2">
+              <div class="w-25">
+                <img src="assets/imgs/main/image-6.jpg" alt="musica" class="img-fluid rounded-start" />
+              </div>
+              <div>
+                <p class="text-white">Deep Dive with Ali Abdaal</p>
+              </div>
+            </div>
           </div>
+
+          <h2>Altro di ciò che ti piace</h2>
+          <div class="row gap-3 justify-content-between m-auto" id="consigliati"></div>
         </div>
 
-        <h2>Buonasera</h2>
-        <div class="row flex-wrap justify-content-between m-auto" id="playlist">
-          <div class="Hplaylist d-flex align-items-center rounded col-6 col-md-4 mb-2">
-            <div class="w-25">
-              <img src="assets/imgs/main/image-1.jpg" alt="musica" class="img-fluid" />
-            </div>
+        <div class="destra col-2 d-none d-md-block bg-black" id="attivitaCol">
+          <div class="d-flex justify-content-between align-items-center py-2">
+            <h5 class="mb-0">Attività amici</h5>
             <div>
-              <p class="text-white pb-0">early stage emily syndrome</p>
-              <p class="text-white pt-0">(sett-ott 2022)</p>
+              <i class="bi bi-person-plus text-white"></i>
+              <i class="bi bi-x-lg text-white ms-2" id="toggleFriendlist"></i>
             </div>
           </div>
-          <div class="Hplaylist d-flex align-items-center rounded col-6 col-md-4 mb-2">
-            <div class="w-25">
-              <img src="assets/imgs/main/image-2.jpg" alt="musica" class="img-fluid" />
+
+          <div class="amici d-flex flex-wrap">
+            <div class="Profilo rounded-circle">
+              <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
             </div>
-            <div>
-              <p class="text-white">Be The Young</p>
+            <div class="testoAmici me-auto">
+              <h5 class="text-white">Charlie Hookham</h5>
+              <p class="text-white">Autore • Album</p>
+              <div class="d-flex">
+                <i class="bi bi-vinyl text-white"></i>
+                <p class="text-white">Canzone</p>
+              </div>
             </div>
-          </div>
-          <div class="Hplaylist d-flex align-items-center rounded col-6 col-md-4 mb-2">
-            <div class="w-25">
-              <img src="assets/imgs/main/image-3.jpg" alt="musica" class="img-fluid" />
-            </div>
-            <div>
-              <p class="text-white">saggio vibes 🎭🎭</p>
-            </div>
-          </div>
-          <div class="Hplaylist d-flex align-items-center rounded col-6 col-md-4 mb-2">
-            <div class="w-25">
-              <img src="assets/imgs/main/image-4.jpg" alt="musica" class="img-fluid" />
-            </div>
-            <div>
-              <p class="text-white">Brani che ti piacciono</p>
+            <div class="ora text-white">
+              <p>4 ore</p>
             </div>
           </div>
-          <div class="Hplaylist d-flex align-items-center rounded col-6 col-md-4 mb-2">
-            <div class="w-25">
-              <img src="assets/imgs/main/image-5.jpg" alt="musica" class="img-fluid" />
+
+          <div class="amici d-flex">
+            <div class="Profilo rounded-circle">
+              <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
             </div>
-            <div>
-              <p class="text-white">2021 lol</p>
+            <div class="testoAmici">
+              <h5 class="text-white">lightdark02</h5>
+              <p class="text-white">Autore • Album</p>
+              <div class="d-flex">
+                <i class="bi bi-music-note-beamed text-white"></i>
+                <p class="text-white">Canzone</p>
+              </div>
+            </div>
+            <div class="ora text-white">
+              <p>8 ore</p>
             </div>
           </div>
-          <div class="Hplaylist d-flex align-items-center rounded col-6 col-md-4 mb-2">
-            <div class="w-25">
-              <img src="assets/imgs/main/image-6.jpg" alt="musica" class="img-fluid" />
+
+          <div class="amici d-flex">
+            <div class="Profilo rounded-circle">
+              <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
             </div>
-            <div>
-              <p class="text-white">Deep Dive iwth Ali Abdaal</p>
+            <div class="testoAmici">
+              <h5 class="text-white">Valeria Traverso</h5>
+              <p class="text-white">Autore • Album</p>
+              <div class="d-flex">
+                <i class="bi bi-music-note-beamed text-white"></i>
+                <p class="text-white">Canzone</p>
+              </div>
+            </div>
+            <div class="ora text-white">
+              <p>3 giorni</p>
             </div>
           </div>
         </div>
-
-        <h2>Altro di ciò che ti piace</h2>
-        <div class="row gap-4 justify-content-between" id="consigliati"></div>
-      </div>
-
-      <div class="destra col-2 d-none d-md-block bg-black" id="attivitaCol">
-        <div class="d-flex justify-content-between align-items-center py-2">
-          <h5 class="mb-0">Attività amici</h5>
-          <div>
-            <i class="bi bi-person-plus text-white"></i>
-            <i class="bi bi-x-lg text-white ms-2" id="toggleFriendlist"></i>
-          </div>
+        <div class="newHome fixed-bottom col-12 d-block d-md-none">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                <i class="bi bi-house text-white"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-search text-white"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-list text-white"></i>
+              </a>
+            </li>
+          </ul>
         </div>
 
-        <div class="amici d-flex flex-wrap">
-          <div class="Profilo rounded-circle">
-            <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
-          </div>
-          <div class="testoAmici me-auto">
-            <h5 class="text-white">Charlie Hookham</h5>
-            <p class="text-white">Autore • Album</p>
-            <div class="d-flex">
-              <i class="bi bi-vinyl text-white"></i>
-              <p class="text-white">Canzone</p>
+        <footer class="fixed-bottom d-none d-md-block bg-black text-white py-2 position-absolute barra-lettore">
+          <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <img src="" alt="copertina" class="img-fluid copertina-canzone" />
+              <div class="ms-2">
+                <p class="mb-0">Fat Funny Friend</p>
+                <div class="text-secondary">Maddie Zahm</div>
+              </div>
+              <i class="bi bi-heart ms-3"></i>
             </div>
-          </div>
-          <div class="ora text-white">
-            <p>4 ore</p>
-          </div>
-        </div>
 
-        <div class="amici d-flex">
-          <div class="Profilo rounded-circle">
-            <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
-          </div>
-          <div class="testoAmici">
-            <h5 class="text-white">lightdark02</h5>
-            <p class="text-white">Autore • Album</p>
-            <div class="d-flex">
-              <i class="bi bi-music-note-beamed text-white"></i>
-              <p class="text-white">Canzone</p>
+            <div class="d-flex flex-column align-items-center">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-shuffle"></i>
+                <i class="bi bi-skip-start-fill"></i>
+                <i class="bi bi-play-circle-fill fs-3" id="play-btn"></i>
+                <i class="bi bi-skip-end-fill"></i>
+                <i class="bi bi-repeat"></i>
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-1">
+                <div id="tempo-corrente">0:00</div>
+                <input type="range" id="barra-avanzamento" min="0" max="200" value="0" />
+                <div id="tempo-totale">3:20</div>
+              </div>
             </div>
-          </div>
-          <div class="ora text-white">
-            <p>8 ore</p>
-          </div>
-        </div>
 
-        <div class="amici d-flex">
-          <div class="Profilo rounded-circle">
-            <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
-          </div>
-          <div class="testoAmici">
-            <h5 class="text-white">Valeria Traverso</h5>
-            <p class="text-white">Autore • Album</p>
-            <div class="d-flex">
-              <i class="bi bi-music-note-beamed text-white"></i>
-              <p class="text-white">Canzone</p>
-            </div>
-          </div>
-          <div class="ora text-white">
-            <p>3 giorni</p>
-          </div>
-        </div>
-      </div>
-      <div class="newHome fixed-bottom col-12 d-block d-md-none">
-        <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-              <i class="bi bi-house text-white"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="bi bi-search text-white"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="bi bi-list text-white"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <footer class="fixed-bottom d-none d-md-block bg-black text-white py-2 position-absolute barra-lettore">
-        <div class="container-fluid d-flex align-items-center justify-content-between">
-          <div class="d-flex align-items-center">
-            <img src="" alt="copertina" class="img-fluid copertina-canzone" />
-            <div class="ms-2">
-              <p class="mb-0">Fat Funny Friend</p>
-              <div class="text-secondary">Maddie Zahm</div>
-            </div>
-            <i class="bi bi-heart ms-3"></i>
-          </div>
-
-          <div class="d-flex flex-column align-items-center">
             <div class="d-flex align-items-center gap-3">
-              <i class="bi bi-shuffle"></i>
-              <i class="bi bi-skip-start-fill"></i>
-              <i class="bi bi-play-circle-fill fs-3" id="play-btn"></i>
-              <i class="bi bi-skip-end-fill"></i>
-              <i class="bi bi-repeat"></i>
-            </div>
-            <div class="d-flex align-items-center gap-2 mt-1">
-              <div id="tempo-corrente">0:00</div>
-              <input type="range" id="barra-avanzamento" min="0" max="200" value="0" />
-              <div id="tempo-totale">3:20</div>
+              <i class="bi bi-volume-up"></i>
+              <input type="range" id="barra-volume" min="0" max="100" value="50" class="barra-volume" />
+              <i class="bi bi-arrows-fullscreen"></i>
             </div>
           </div>
-
-          <div class="d-flex align-items-center gap-3">
-            <i class="bi bi-volume-up"></i>
-            <input type="range" id="barra-volume" min="0" max="100" value="50" class="barra-volume" />
-            <i class="bi bi-arrows-fullscreen"></i>
-          </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="./assets/script/script.js"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/script/script.js"></script>
+  </body>
 </html>

@@ -19,7 +19,7 @@
 }
 
 #songList {
-  background: linear-gradient(180deg, #5a4e20 0%, #1f1c14 50%, rgba(18, 18, 18, 1) 100%);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .songListTable {
   --bs-table-bg: transparent;
@@ -97,4 +97,30 @@ tbody tr th:last-child {
 .table tbody tr td div p {
   font-size: 0.7vw;
   padding-top: 0.5em;
+}
+
+/* PLAYER */
+.barra-volume {
+  width: 100px;
+  accent-color: #1db954;
+}
+
+.barra-lettore {
+  border-top: 1px solid #222;
+}
+
+footer i {
+  cursor: pointer;
+}
+
+footer i:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+  color: #cfcfcf;
+}
+
+footer i:active {
+  transform: scale(0.9);
+  transition: 0.3s ease;
+  color: #cfcfcf;
 }
