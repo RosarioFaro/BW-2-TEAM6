@@ -104,7 +104,7 @@ fetch(URL, {
         <h2 id="albumTitle" class="text-white fw-bold pb-3 ps-1">${album.title}</h2>
         <div class="d-flex align-items-center">
           <img src="${album.artist.picture_xl}" alt="" class="rounded-circle" id="roundedImgCentral">
-          <p id="albumParag"  class="text-white mb-0 ps-2"><a href="./artist.html" class="text-white text-decoration-none "><span class="fw-bold">${album.artist.name}</span></a> • ${album.release_date} • ${album.tracks.data.length} brani,
+          <p id="albumParag"  class="text-white mb-0 ps-2"><a href="artist.html?id=${album.artist.id}" class="text-white text-decoration-none "><span class="fw-bold">${album.artist.name}</span></a> • ${album.release_date} • ${album.tracks.data.length} brani,
             <span class="opacity-50">${album.duration}</span>
           </p>
         </div>
@@ -122,7 +122,7 @@ fetch(URL, {
             <a href="#">
               <h5 class="songTitle mb-0">${ele.title_short}</h5>
             </a>
-            <a href="./artist.html">
+            <a href="artist.html?id=${album.artist.id}">
               <p class="mb-0">${ele.artist.name}</p>
             </a>
           </div>
