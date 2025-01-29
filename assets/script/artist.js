@@ -275,8 +275,7 @@ function loadArtistData(artistId) {
     );
 }
 
-const defaultArtistId = 15;
-loadArtistData(defaultArtistId);
+const defaultArtistId = loadArtistData(defaultArtistId);
 
 document
   .getElementById("toggleFriendlist")
