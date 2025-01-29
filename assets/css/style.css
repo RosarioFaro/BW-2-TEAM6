@@ -60,6 +60,16 @@
 .dropdown-menu {
   --bs-dropdown-bg: black;
 }
+#dropdownButton {
+  font-size: 1vw;
+}
+.bi-caret-left-square {
+  font-size: 1.4vw;
+  margin-right: 0.5em;
+}
+.bi-caret-right-square {
+  font-size: 1.4vw;
+}
 h2 {
   color: white;
   padding: 8px 0px;

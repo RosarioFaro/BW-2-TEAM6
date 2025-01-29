@@ -17,9 +17,7 @@
 #parteCentrale {
   background: linear-gradient(180deg, rgba(229, 198, 82, 1) 0%, rgba(31, 29, 20, 1) 50%, rgba(18, 18, 18, 1) 100%);
 }
-#dropdownButton {
-  font-size: 1vw;
-}
+
 #songList {
   background: linear-gradient(180deg, #5a4e20 0%, #1f1c14 50%, rgba(18, 18, 18, 1) 100%);
 }
@@ -29,13 +27,6 @@
 }
 .bi-play-circle {
   font-size: 3em;
-}
-.bi-caret-left-square {
-  font-size: 1.3em;
-  margin-right: 0.5em;
-}
-.bi-caret-right-square {
-  font-size: 1.3em;
 }
 
 /* FORMATTAZIONE TABELLA CANZONI */
