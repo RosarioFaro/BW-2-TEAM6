@@ -1,0 +1,32 @@
+body {
+  padding: 1em;
+}
+
+input {
+  border-style: none;
+  border: 1px solid rgba(172, 172, 172, 0.461);
+  border-left: none;
+  border-top-right-radius: 8px;
+  border-end-end-radius: 8px;
+  border-bottom-color: rgb(172, 172, 172);
+  outline: none;
+}
+#basic-addon1 {
+  border-style: none;
+  border: 1px solid rgba(172, 172, 172, 0.461);
+  border-right: none;
+}
+h5 {
+  text-align: center;
+}
+.newHome {
+  color: white;
+  text-decoration: none;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5048144257703081) 0%,
+    rgba(0, 0, 0, 0.7961309523809523) 33%,
+    rgba(0, 0, 0, 1) 82%
+  );
+}
