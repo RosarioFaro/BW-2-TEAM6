@@ -124,3 +124,9 @@ footer i:active {
   transition: 0.3s ease;
   color: #cfcfcf;
 }
+#copertina {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
