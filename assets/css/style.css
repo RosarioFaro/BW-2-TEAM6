@@ -10,6 +10,8 @@
 }
 .listPlaylist {
   margin-bottom: 5.4em;
+}
+.list-group-item {
   font-size: 1vw;
 }
 #consigliati {
@@ -55,9 +57,7 @@
 .listPersonal {
   font-size: 11px;
 }
-#sinistra a {
-  font-size: 12px;
-}
+
 h2 {
   color: white;
   padding: 8px 0px;
@@ -70,7 +70,6 @@ h2 {
 }
 
 h5 {
-  font-size: 11px;
   color: white;
 }
 
@@ -88,9 +87,12 @@ h5 {
   height: 30px;
   margin-right: 10px;
 }
-
+.testoAmici {
+  font-size: 0.7vw;
+}
 .testoAmici h5 {
   margin-bottom: 1%;
+  font-size: 0.7vw;
 }
 
 .testoAmici i {
@@ -99,7 +101,6 @@ h5 {
 }
 
 .testoAmici p {
-  font-size: 8px;
   margin-bottom: 1%;
 }
 
@@ -109,7 +110,7 @@ h5 {
 }
 
 .ora {
-  font-size: 11px;
+  font-size: 0.7vw;
   position: absolute;
   right: 0;
   top: -5px;
@@ -144,12 +145,7 @@ footer i:active {
   color: white;
   text-decoration: none;
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.5048144257703081) 0%,
-    rgba(0, 0, 0, 0.7961309523809523) 33%,
-    rgba(0, 0, 0, 1) 82%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5048144257703081) 0%, rgba(0, 0, 0, 0.7961309523809523) 33%, rgba(0, 0, 0, 1) 82%);
 }
 
 @media only screen and (min-width: 768px) {
