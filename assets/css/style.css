@@ -5,9 +5,12 @@
 .listPersonal {
   height: 100vh;
 }
-
+#navList {
+  font-size: 1vw;
+}
 .listPlaylist {
   margin-bottom: 5.4em;
+  font-size: 1vw;
 }
 #consigliati {
   margin-bottom: 5em;
