@@ -1,3 +1,20 @@
+document.getElementById("toggleFriendlist").addEventListener("click", function () {
+  let col = document.getElementById("attivitaCol");
+  col.classList.toggle("d-md-none");
+});
+
+document.getElementById("btnMostraAmici").addEventListener("click", function () {
+  let col = document.getElementById("attivitaCol");
+
+  col.classList.toggle("d-md-none");
+
+  if (col.classList.contains("d-md-none")) {
+    this.innerHTML = '<i class="bi bi-arrow-left-short h2 text-white"></i>';
+  } else {
+    this.innerHTML = '<i class="bi bi-arrow-right-short h2 text-white"></i>';
+  }
+});
+
 const playBtn = document.getElementById("play-btn");
 const tempoCorrenteEl = document.getElementById("tempo-corrente");
 const barraAvanzamento = document.getElementById("barra-avanzamento");
@@ -118,20 +135,3 @@ fetch(URL, {
   .catch((err) => {
     console.log(err);
   });
-
-document.getElementById("toggleFriendlist").addEventListener("click", function () {
-  let col = document.getElementById("attivitaCol");
-  col.classList.toggle("d-none");
-});
-
-document.getElementById("btnMostraAmici").addEventListener("click", function () {
-  let col = document.getElementById("attivitaCol");
-
-  col.classList.toggle("d-none");
-
-  if (col.classList.contains("d-none")) {
-    this.innerHTML = '<i class="bi bi-arrow-left-short h2 text-white"></i>';
-  } else {
-    this.innerHTML = '<i class="bi bi-arrow-right-short h2 text-white"></i>';
-  }
-});
