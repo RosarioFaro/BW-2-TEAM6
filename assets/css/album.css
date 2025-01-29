@@ -3,17 +3,21 @@
   width: 4%;
 }
 #albumTitle {
-  font-size: 5em;
+  font-size: 5vw;
 }
 #albumImg {
   box-shadow: 7px 2px 46px 4px rgba(0, 0, 0, 0.6);
 }
 #album {
-  font-size: 0.8em;
+  font-size: 0.8vw;
+}
+#albumParag {
+  font-size: 1vw;
 }
 #parteCentrale {
   background: linear-gradient(180deg, rgba(229, 198, 82, 1) 0%, rgba(31, 29, 20, 1) 50%, rgba(18, 18, 18, 1) 100%);
 }
+
 #songList {
   background: linear-gradient(180deg, #5a4e20 0%, #1f1c14 50%, rgba(18, 18, 18, 1) 100%);
 }
@@ -24,13 +28,7 @@
 .bi-play-circle {
   font-size: 3em;
 }
-.bi-caret-left-square {
-  font-size: 1.3em;
-  margin-right: 0.5em;
-}
-.bi-caret-right-square {
-  font-size: 1.3em;
-}
+
 /* FORMATTAZIONE TABELLA CANZONI */
 thead {
   border-bottom: 1px solid grey;
@@ -38,55 +36,65 @@ thead {
 thead tr th {
   font-weight: 400;
 }
+thead tr th:nth-child(2) {
+  font-size: 1vw;
+}
 thead tr th:nth-child(3) {
   text-align: right;
   padding-right: 7.8em;
+  font-size: 1vw;
 }
 thead tr th:last-child {
   text-align: right;
   padding-right: 3em;
+  font-size: 1vw;
 }
 thead tr th:first-child {
   padding-left: 1em;
   width: 5%;
+  font-size: 1vw;
 }
 tbody tr th:first-child {
   padding-left: 1em;
   width: 5%;
   padding-bottom: 0;
+  font-size: 1vw;
 }
 
 tbody tr td:nth-child(3) {
   text-align: right;
-  padding-right: 10em;
+  padding-right: 8vw;
   padding-bottom: 0;
-  font-size: 0.8em;
+  font-size: 0.9vw;
 }
 tbody tr th:nth-child(3) {
   text-align: right;
   padding-right: 10em;
   padding-bottom: 0;
+  font-size: 0.9vw;
 }
 tbody tr td:last-child {
   text-align: right;
   padding-right: 3em;
   padding-bottom: 0;
+  font-size: 0.9vw;
 }
 tbody tr th:last-child {
   text-align: right;
   padding-right: 3em;
   padding-bottom: 0;
+  font-size: 0.9vw;
 }
 
 .table tbody tr td div .songTitle {
   font-weight: bold;
-  font-size: 0.8em;
+  font-size: 0.9vw;
 }
 .table tbody tr td div a {
   text-decoration: none;
   color: grey;
 }
 .table tbody tr td div p {
-  font-size: 0.6em;
+  font-size: 0.7vw;
   padding-top: 0.5em;
 }
