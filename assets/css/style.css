@@ -43,9 +43,21 @@
   padding: 0;
   background-color: #2c2c2c;
 }
+.Hplaylist p {
+  margin-bottom: 0;
+  padding: 5px;
+  font-size: 12px;
+}
 
+.listPersonal {
+  font-size: 8px;
+}
+#sinistra a {
+  font-size: 12px;
+}
 h2 {
   color: white;
+  padding: 8px 0px;
 }
 
 .card {
@@ -123,4 +135,24 @@ footer i:active {
   transform: scale(0.9);
   transition: 0.3s ease;
   color: #cfcfcf;
+}
+
+.newHome {
+  color: white;
+  text-decoration: none;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5048144257703081) 0%,
+    rgba(0, 0, 0, 0.7961309523809523) 33%,
+    rgba(0, 0, 0, 1) 82%
+  );
+}
+
+@media only screen and (min-width: 768px) {
+  .Hplaylist p {
+    margin-bottom: 0;
+    padding: 8px;
+    font-size: 15px;
+  }
 }
