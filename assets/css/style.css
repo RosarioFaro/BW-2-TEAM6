@@ -24,11 +24,38 @@
   background: rgb(36, 36, 36);
   background: linear-gradient(0deg, rgba(36, 36, 36, 1) 39%, rgba(56, 56, 56, 1) 67%, rgba(82, 82, 82, 1) 100%);
 }
+.card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#albumCarousel h6 {
+  font-size: 1vw;
+}
+#albumCarousel h2 {
+  font-size: 2.5vw;
+}
+#albumCarousel p {
+  font-size: 1vw;
+}
+#albumCarousel button {
+  font-size: 1vw;
+}
+#attivitaCol {
+  transition: transform 0.3s ease;
+}
+
+#attivitaCol.scomparsa {
+  transform: translateX(100%);
+}
 
 #annuncio {
   background: rgb(0, 0, 0);
   background: linear-gradient(9deg, rgba(0, 0, 0, 1) 22%, rgba(38, 38, 38, 1) 57%, rgba(52, 52, 52, 1) 100%);
   border-radius: 8px;
+}
+h2 {
+  font-size: 2.5vw;
 }
 
 .Hplaylist {
@@ -173,13 +200,18 @@ footer i:active {
   color: white;
   text-decoration: none;
   background: rgb(0, 0, 0);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5048144257703081) 0%, rgba(0, 0, 0, 0.7961309523809523) 33%, rgba(0, 0, 0, 1) 82%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5048144257703081) 0%,
+    rgba(0, 0, 0, 0.7961309523809523) 33%,
+    rgba(0, 0, 0, 1) 82%
+  );
 }
 
 @media only screen and (min-width: 768px) {
   .Hplaylist p {
     margin-bottom: 0;
     padding: 8px;
-    font-size: 15px;
+    font-size: 1vw;
   }
 }
