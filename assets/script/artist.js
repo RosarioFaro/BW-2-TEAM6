@@ -60,6 +60,19 @@ barraAvanzamento.addEventListener("change", () => {
     intervalId = setInterval(updateProgress, 1000);
   }
 });
+function getArtistIdFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("id");
+}
+
+const artistId = getArtistIdFromURL();
+
+if (artistId) {
+  loadArtistData(artistId);
+  loadArtistSongs(artistId);
+} else {
+  console.error("Nessun ID artista trovato nell'URL.");
+}
 
 function loadArtistData(artistId) {
   const apiUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`;
