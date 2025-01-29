@@ -19,7 +19,7 @@
 }
 
 #songList {
-  background: linear-gradient(180deg, #5a4e20 0%, #1f1c14 50%, rgba(18, 18, 18, 1) 100%);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .songListTable {
   --bs-table-bg: transparent;

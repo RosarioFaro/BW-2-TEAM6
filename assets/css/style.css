@@ -44,6 +44,9 @@
 #attivitaCol {
   transition: transform 0.3s ease;
 }
+#attivitaCol div:first-child > h5 {
+  font-size: 1.2vw;
+}
 
 #attivitaCol.scomparsa {
   transform: translateX(100%);
