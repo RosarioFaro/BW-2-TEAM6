@@ -94,6 +94,32 @@
           </div>
         </div>
         <div class="col overflow-y-scroll" id="parteCentrale">
+          <div class="row px-4">
+            <div class="col">
+              <a href="#" class="text-white"><i class="bi bi-caret-left-square"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-caret-right-square"></i></a>
+            </div>
+            <div class="col text-end d-flex align-items-center justify-content-end">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle rounded-pill bg-black"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Nome utente
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+              <div class="ms-3 p-0" id="btnMostraAmici">
+                <i class="bi bi-arrow-right-short h2 text-white"></i>
+              </div>
+            </div>
+          </div>
           <div class="container my-3 d-none d-md-block" id="annuncio">
             <div id="albumCarousel" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
@@ -213,7 +239,7 @@
             </div>
           </div>
           <h2>Altro di ciò che ti piace</h2>
-          <div class="row gap-4 justify-content-evenly" id="consigliati"></div>
+          <div class="row gap-1 justify-content-evenly" id="consigliati"></div>
         </div>
         <div class="destra col-2 bg-black" id="attivitaCol">
           <div class="d-flex justify-content-between align-items-center py-2">

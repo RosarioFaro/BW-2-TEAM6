@@ -18,16 +18,16 @@ function fetchAlbum(apiUrl, nvolte) {
 
         randomObjects.forEach((album) => {
           const cardDiv = document.createElement("div");
-          cardDiv.className = "col-2 p-0";
+          cardDiv.className = "col-9 col-md-4 col-lg-2 p-0 overflow-hidden cardDiv";
 
           cardDiv.innerHTML = `
           <div class="card">
           <div class="imgCard">
-            <img src="${album.album.cover_medium}" class="card-img-top" alt="${album.title_short}" />
+            <img src="${album.album.cover_xl}" class="card-img-top" alt="${album.title_short}" />
           </div>
           <div class="card-body">
             <h6 class="card-title">${album.title_short}</h6>
-            <p class="card-text">${album.album.title}</p>
+            <h5 class="card-text">${album.album.title}</h5>
           </div>
           </div>`;
 
@@ -46,8 +46,19 @@ fetchAlbum(URL, 10);
 
 document.getElementById("toggleFriendlist").addEventListener("click", function () {
   let col = document.getElementById("attivitaCol");
-  col.classList.toggle("scomparsa");
-  col.classList.add("d-none");
+  col.classList.toggle("d-none");
+});
+
+document.getElementById("btnMostraAmici").addEventListener("click", function () {
+  let col = document.getElementById("attivitaCol");
+
+  col.classList.toggle("d-none");
+
+  if (col.classList.contains("d-none")) {
+    this.innerHTML = '<i class="bi bi-arrow-left-short h2 text-white"></i>';
+  } else {
+    this.innerHTML = '<i class="bi bi-arrow-right-short h2 text-white"></i>';
+  }
 });
 
 const playBtn = document.getElementById("play-btn");
