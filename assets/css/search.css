@@ -1,0 +1,21 @@
+body {
+  padding: 1em;
+}
+
+input {
+  border-style: none;
+  border: 1px solid rgba(172, 172, 172, 0.461);
+  border-left: none;
+  border-top-right-radius: 8px;
+  border-end-end-radius: 8px;
+  border-bottom-color: rgb(172, 172, 172);
+  outline: none;
+}
+#basic-addon1 {
+  border-style: none;
+  border: 1px solid rgba(172, 172, 172, 0.461);
+  border-right: none;
+}
+h5 {
+  text-align: center;
+}
