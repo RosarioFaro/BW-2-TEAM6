@@ -36,7 +36,7 @@ fetch(URL, {
     /* CREAZIONE INTERFACCIA GRAFICA ALBUM */
     const row = document.getElementById("albumPresentation");
     row.innerHTML = `
-        <div class="col-12 col-md-3 px-0 d-flex">
+        <div class="col-12 col-md-4 px-0 d-flex">
           <div class="d-md-none col-2">
             <a href="./index.html"><i class="bi bi-arrow-left text-white"></i></a>
           </div>
@@ -44,25 +44,25 @@ fetch(URL, {
             <img src="${album.cover_medium}" class="img-fluid" alt="" id="albumImg">
           </div>            
         </div>
-        <h2 id="albumTitle" class="text-white fw-bold pb-2 px-0 d-md-none mb-0">${album.title}</h2>
-        <div class="col-12 col-md-9 align-text-bottom px-0">
+        <h2 id="albumTitle" class="text-white pb-2 px-0 d-md-none mb-0">${album.title}</h2>
+        <div class="col-12 col-md-8 align-text-bottom px-0">
             <p class="text-white fw-bold mb-0 d-none d-md-block" id="album">ALBUM</p>
-            <h2 id="albumTitle" class="text-white fw-bold pb-3 ps-1 d-none d-md-block">${album.title}</h2>
+            <h2 id="albumTitle" class="text-white pb-3 ps-1 d-none d-md-block fw-bold">${album.title}</h2>
             <div class="d-flex align-items-center d-none d-md-flex">
                 <img src="${album.artist.picture_xl}" alt="" class="rounded-circle roundedImgCentral">
                 <p class="albumParag text-white mb-0 ps-2">
                     <a href="artist.html?id=${album.artist.id}" class="text-white text-decoration-none">
-                        <span class="fw-bold">${album.artist.name}</span>
+                        <span >${album.artist.name}</span>
                     </a> • ${album.release_date} • ${album.tracks.data.length} brani
                 </p>                
             </div>
             
             <div class="d-flex d-md-none">
                 <img src="./assets/imgs/main/image-16.jpg" alt="" class="rounded-circle roundedImgCentral">
-                <p class="albumParag text-white mb-0 ps-2 fw-bold ">${album.artist.name}</p>
+                <p class="albumParag text-white mb-0 ps-2 ">${album.artist.name}</p>
               </div>
             <div class="d-md-none">
-              <p class="albumParag text-white mb-0 pt-2">Album • ${album.release_date}</p>
+              <p class="albumParag text-secondary mb-0 pt-2">Album • ${album.release_date}</p>
             </div>
         </div>`;
 
