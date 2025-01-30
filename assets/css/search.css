@@ -30,3 +30,17 @@ h5 {
     rgba(0, 0, 0, 1) 82%
   );
 }
+
+#banner {
+  height: 220px;
+}
+.rotationIMG {
+  top: 30%;
+  left: 55%;
+  transform: rotate(23deg);
+  width: 200px;
+}
+.titolobanner {
+  top: 20%;
+  left: 0%;
+}
