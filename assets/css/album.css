@@ -1,4 +1,4 @@
-#roundedImgCentral {
+.roundedImgCentral {
   height: 4%;
   width: 4%;
 }
@@ -11,7 +11,7 @@
 #album {
   font-size: 0.8vw;
 }
-#albumParag {
+.albumParag {
   font-size: 1vw;
 }
 #parteCentrale {
@@ -129,4 +129,48 @@ footer i:active {
   height: 100px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.overflow-y-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.overflow-y-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-y-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.774);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 767px) {
+  thead {
+    display: none;
+  }
+  .albumParag {
+    font-size: 2vw;
+  }
+  #songList {
+    background-color: transparent;
+    margin-top: 0 !important;
+  }
+  #songList > div {
+    padding-top: 0 !important;
+  }
+  tr th {
+    display: none;
+  }
+  .table tbody tr td div .songTitle {
+    font-size: 2vw;
+  }
+  .table tbody tr td div p {
+    font-size: 1.8vw;
+  }
+  tr td:nth-of-type(2) {
+    display: none;
+  }
+  tr td:nth-of-type(3) {
+    display: none;
+  }
 }

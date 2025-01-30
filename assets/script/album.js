@@ -59,19 +59,33 @@ fetch(URL, {
     console.log(album);
     const row = document.getElementById("albumPresentation");
     row.innerHTML = `
-        <div class="col-3">
+        <div class="col-12 col-md-3 px-0 d-flex">
+          <div class="d-md-none col-2">
+            <a href="./index.html"><i class="bi bi-arrow-left text-white"></i></a>
+          </div>
+          <div class="col-10">
             <img src="${album.cover_medium}" class="img-fluid" alt="" id="albumImg">
+          </div>            
         </div>
-        <div class="col-9 align-text-bottom">
-            <p class="text-white fw-bold mb-0" id="album">ALBUM</p>
-            <h2 id="albumTitle" class="text-white fw-bold pb-3 ps-1">${album.title}</h2>
-            <div class="d-flex align-items-center">
-                <img src="${album.artist.picture_xl}" alt="" class="rounded-circle" id="roundedImgCentral">
-                <p id="albumParag" class="text-white mb-0 ps-2">
+        <h2 id="albumTitle" class="text-white fw-bold pb-2 px-0 d-md-none mb-0">${album.title}</h2>
+        <div class="col-12 col-md-9 align-text-bottom px-0">
+            <p class="text-white fw-bold mb-0 d-none d-md-block" id="album">ALBUM</p>
+            <h2 id="albumTitle" class="text-white fw-bold pb-3 ps-1 d-none d-md-block">${album.title}</h2>
+            <div class="d-flex align-items-center d-none d-md-flex">
+                <img src="${album.artist.picture_xl}" alt="" class="rounded-circle roundedImgCentral">
+                <p class="albumParag text-white mb-0 ps-2">
                     <a href="artist.html?id=${album.artist.id}" class="text-white text-decoration-none">
                         <span class="fw-bold">${album.artist.name}</span>
                     </a> • ${album.release_date} • ${album.tracks.data.length} brani
-                </p>
+                </p>                
+            </div>
+            
+            <div class="d-flex d-md-none">
+                <img src="./assets/imgs/main/image-16.jpg" alt="" class="rounded-circle roundedImgCentral">
+                <p class="albumParag text-white mb-0 ps-2 fw-bold ">${album.artist.name}</p>
+              </div>
+            <div class="d-md-none">
+              <p class="albumParag text-white mb-0 pt-2">Album • ${album.release_date}</p>
             </div>
         </div>`;
 
@@ -99,7 +113,8 @@ fetch(URL, {
               </div>
           </td>
           <td class="pt-4">${(ele.rank || "N/A").toLocaleString()}</td>
-          <td class="pt-4">${formatTime(ele.duration)}</td>`;
+          <td class="pt-4">${formatTime(ele.duration)}</td>
+          <td class="pt-4 d-md-none"><i class="bi bi-three-dots-vertical text-secondary fs-3 ps-3"></i></td>`;
       tbody.appendChild(tr);
       trackElements.push(tr.querySelector(".play-track"));
     });
