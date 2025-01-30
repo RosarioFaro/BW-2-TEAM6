@@ -56,19 +56,15 @@
   font-size: 1vw;
   font-size: "Circular", serif;
 }
-#parteCentrale {
-  background: linear-gradient(180deg, rgba(229, 198, 82, 1) 0%, rgba(31, 29, 20, 1) 50%, rgba(18, 18, 18, 1) 100%);
-}
 
-#songList {
-  background-color: rgba(0, 0, 0, 0.3);
-}
 .songListTable {
   --bs-table-bg: transparent;
   --bs-table-color: rgb(204, 204, 204);
   font-family: "Circular";
 }
-
+#parteCentrale {
+  background: none;
+}
 .greenBtn {
   color: black;
   background: green;
