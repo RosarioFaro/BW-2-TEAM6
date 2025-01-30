@@ -1,3 +1,24 @@
+document
+  .getElementById("btnMostraAmici")
+  .addEventListener("click", function () {
+    let col = document.getElementById("attivitaCol");
+
+    col.classList.toggle("d-md-none");
+
+    if (col.classList.contains("d-md-none")) {
+      this.innerHTML = '<i class="bi bi-arrow-left-short h2 text-white"></i>';
+    } else {
+      this.innerHTML = '<i class="bi bi-arrow-right-short h2 text-white"></i>';
+    }
+  });
+
+document
+  .getElementById("toggleFriendlist")
+  .addEventListener("click", function () {
+    let col = document.getElementById("attivitaCol");
+    col.classList.toggle("d-md-none");
+  });
+
 const playBtn = document.getElementById("play-btn");
 const tempoCorrenteEl = document.getElementById("tempo-corrente");
 const barraAvanzamento = document.getElementById("barra-avanzamento");
@@ -30,12 +51,22 @@ function loadArtistData(artistId) {
       ).innerHTML = `Ascoltatori mensili: <span>${artist.nb_fan.toLocaleString()}</span>`;
 
       if (artist.picture_xl) {
-        document.querySelector(".artist-header").style.backgroundImage = `url('${artist.picture_xl}')`;
+        document.querySelector(
+          ".artist-header"
+        ).style.backgroundImage = `url('${artist.picture_xl}')`;
+
+        // Aggiunge l'immagine dell'artista nel contenitore circolare
+        const artistImageContainer = document.getElementById(
+          "artist-image-container"
+        );
+        artistImageContainer.innerHTML = `<img src="${artist.picture_xl}" alt="${artist.name}">`;
       }
 
       loadArtistTracklist(artistId);
     })
-    .catch((error) => console.error("Errore nel caricamento dell'artista:", error));
+    .catch((error) =>
+      console.error("Errore nel caricamento dell'artista:", error)
+    );
 }
 
 function getArtistIdFromURL() {
@@ -59,7 +90,9 @@ function loadArtistTracklist(artistId) {
       allSongs = data.data;
       displaySongs();
     })
-    .catch((error) => console.error("Errore nel caricamento della tracklist:", error));
+    .catch((error) =>
+      console.error("Errore nel caricamento della tracklist:", error)
+    );
 }
 
 function displaySongs() {
@@ -67,7 +100,12 @@ function displaySongs() {
 
   allSongs.slice(0, songsLoaded).forEach((song, index) => {
     const songItem = document.createElement("li");
-    songItem.classList.add("song-item", "list-group-item", "bg-transparent", "text-white");
+    songItem.classList.add(
+      "song-item",
+      "list-group-item",
+      "bg-transparent",
+      "text-white"
+    );
 
     songItem.innerHTML = `
       <div class="song-info">
@@ -102,9 +140,11 @@ function playTrack(selectedSong) {
   if (!selectedSong) return;
 
   audioElement.src = selectedSong.preview;
-  document.querySelector(".copertina-canzone").src = selectedSong.album.cover_medium;
+  document.querySelector(".copertina-canzone").src =
+    selectedSong.album.cover_medium;
   document.querySelector(".barra-lettore p").textContent = selectedSong.title;
-  document.querySelector(".barra-lettore .text-secondary").textContent = selectedSong.artist.name;
+  document.querySelector(".barra-lettore .text-secondary").textContent =
+    selectedSong.artist.name;
 
   const realDuration = selectedSong.duration;
   tempoTotaleEl.innerText = formatTime(realDuration);
@@ -117,11 +157,24 @@ function playTrack(selectedSong) {
 
 songList.addEventListener("click", function (event) {
   const songInfoDiv = event.target.closest(".song-info");
+  const clickedImg = event.target.closest("img");
+
+  if (clickedImg) {
+    const songItem = clickedImg.closest(".song-info");
+    if (songItem) {
+      const songTitle = songItem.querySelector(".song-title").textContent;
+      const selectedSong = allSongs.find((song) => song.title === songTitle);
+
+      if (selectedSong) {
+        window.location.href = `album.html?id=${selectedSong.album.id}`;
+      }
+    }
+    return;
+  }
 
   if (songInfoDiv) {
     const songTitle = songInfoDiv.querySelector(".song-title").textContent;
     const selectedSong = allSongs.find((song) => song.title === songTitle);
-
     playTrack(selectedSong);
   }
 });
@@ -162,7 +215,9 @@ volumeControl.addEventListener("input", () => {
 });
 
 function playNextTrack() {
-  let currentIndex = allSongs.findIndex((song) => song.preview === audioElement.src);
+  let currentIndex = allSongs.findIndex(
+    (song) => song.preview === audioElement.src
+  );
 
   if (currentIndex !== -1 && currentIndex < allSongs.length - 1) {
     const nextSong = allSongs[currentIndex + 1];
@@ -173,7 +228,16 @@ function playNextTrack() {
 }
 
 audioElement.addEventListener("ended", playNextTrack);
+document.addEventListener("DOMContentLoaded", function () {
+  const followButton = document.querySelector(
+    ".artist-buttons .btn-outline-light"
+  );
 
-document.getElementById("toggleFriendlist").addEventListener("click", function () {
-  document.getElementById("attivitaCol").classList.toggle("d-md-none");
+  followButton.addEventListener("click", function () {
+    if (followButton.innerText.trim() === "FOLLOWING") {
+      followButton.innerText = "SEGUI GIÀ";
+    } else {
+      followButton.innerText = "FOLLOWING";
+    }
+  });
 });
