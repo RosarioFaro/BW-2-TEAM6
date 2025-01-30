@@ -74,7 +74,7 @@ barraAvanzamento.addEventListener("change", () => {
   }
 });
 
-const URL = "https://striveschool-api.herokuapp.com/api/deezer/search?q={query}";
+const URL = "https://striveschool-api.herokuapp.com/api/deezer/search?q=rock";
 
 function fetchAlbum(apiUrl, nvolte) {
   fetch(apiUrl)
@@ -121,3 +121,36 @@ function fetchAlbum(apiUrl, nvolte) {
 }
 
 fetchAlbum(URL, 10);
+
+function adjustStyles() {
+  const footer = document.querySelector("footer");
+  const consigliati = document.querySelector("#parteCentrale");
+  const listPlaylist = document.querySelector("#sinistra");
+
+  if (footer) {
+    const footerHeight = footer.offsetHeight;
+
+    if (consigliati) {
+      consigliati.style.height = `calc(100vh - ${footerHeight}px)`;
+    }
+
+    if (listPlaylist) {
+      listPlaylist.style.height = `calc(100vh - ${footerHeight}px)`;
+    }
+  }
+}
+
+window.addEventListener("resize", adjustStyles);
+window.addEventListener("load", adjustStyles);
+
+document.addEventListener("DOMContentLoaded", function () {
+  let activeNavItem = document.querySelector(".nav-link.active");
+
+  if (activeNavItem) {
+    let icon = activeNavItem.querySelector("i");
+
+    if (icon && icon.classList.contains("bi-house")) {
+      icon.classList.replace("bi-house", "bi-house-fill");
+    }
+  }
+});

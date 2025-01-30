@@ -2,14 +2,14 @@ const playBtn = document.getElementById("play-btn");
 const tempoCorrenteEl = document.getElementById("tempo-corrente");
 const barraAvanzamento = document.getElementById("barra-avanzamento");
 const tempoTotaleEl = document.getElementById("tempo-totale");
+const songList = document.getElementById("song-list");
+const loadMoreBtn = document.getElementById("load-more");
+const showLessBtn = document.getElementById("show-less");
+const volumeControl = document.getElementById("barra-volume");
+const audioElement = document.getElementById("audio");
 
-const [minutiTotali, secondiTotali] = tempoTotaleEl.innerText
-  .split(":")
-  .map(Number);
-const tempoTotaleSecondi = minutiTotali * 60 + secondiTotali;
-
-let tempoCorrenteSecondi = 0;
-let intervalId;
+let songsLoaded = 5;
+let allSongs = [];
 let isPlaying = false;
 
 function formatTime(seconds) {
@@ -18,195 +18,56 @@ function formatTime(seconds) {
   return `${minutes}:${secs.toString().padStart(2, "0")}`;
 }
 
-function updateProgress() {
-  if (tempoCorrenteSecondi < tempoTotaleSecondi) {
-    tempoCorrenteSecondi++;
-    tempoCorrenteEl.innerText = formatTime(tempoCorrenteSecondi);
-    barraAvanzamento.value = (tempoCorrenteSecondi / tempoTotaleSecondi) * 200;
-  } else {
-    tempoCorrenteSecondi = 0;
-    tempoCorrenteEl.innerText = formatTime(tempoCorrenteSecondi);
-    barraAvanzamento.value = 0;
+function loadArtistData(artistId) {
+  const apiUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`;
 
-    if (isPlaying) {
-      clearInterval(intervalId);
-      intervalId = setInterval(updateProgress, 1000);
-    }
-  }
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((artist) => {
+      document.getElementById("artist-name").innerText = artist.name;
+      document.getElementById(
+        "artist-listeners"
+      ).innerHTML = `Ascoltatori mensili: <span>${artist.nb_fan.toLocaleString()}</span>`;
+
+      if (artist.picture_xl) {
+        document.querySelector(".artist-header").style.backgroundImage = `url('${artist.picture_xl}')`;
+      }
+
+      loadArtistTracklist(artistId);
+    })
+    .catch((error) => console.error("Errore nel caricamento dell'artista:", error));
 }
 
-playBtn.addEventListener("click", () => {
-  if (isPlaying) {
-    clearInterval(intervalId);
-    isPlaying = false;
-    playBtn.classList.replace("bi-pause-circle-fill", "bi-play-circle-fill");
-  } else {
-    intervalId = setInterval(updateProgress, 1000);
-    isPlaying = true;
-    playBtn.classList.replace("bi-play-circle-fill", "bi-pause-circle-fill");
-  }
-});
-
-barraAvanzamento.addEventListener("input", () => {
-  tempoCorrenteSecondi = Math.round(
-    (barraAvanzamento.value / barraAvanzamento.max) * tempoTotaleSecondi
-  );
-  tempoCorrenteEl.innerText = formatTime(tempoCorrenteSecondi);
-});
-
-barraAvanzamento.addEventListener("change", () => {
-  if (isPlaying) {
-    clearInterval(intervalId);
-    intervalId = setInterval(updateProgress, 1000);
-  }
-});
 function getArtistIdFromURL() {
   const params = new URLSearchParams(window.location.search);
   return params.get("id");
 }
 
 const artistId = getArtistIdFromURL();
-
 if (artistId) {
   loadArtistData(artistId);
-  loadArtistSongs(artistId);
 } else {
   console.error("Nessun ID artista trovato nell'URL.");
 }
 
-function loadArtistData(artistId) {
-  const apiUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`;
+function loadArtistTracklist(artistId) {
+  const tracklistUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=25`;
 
-  fetch(apiUrl)
-    .then((response) => response.json())
-    .then((artist) => {
-      console.log("Dati ricevuti dall'API:", artist);
-
-      document.getElementById("artist-name").innerText = artist.name;
-      document.getElementById(
-        "artist-listeners"
-      ).innerHTML = `Ascoltatori mensili: <span>${artist.nb_fan.toLocaleString()}</span>`;
-
-      if (artist.picture_xl) {
-        document.querySelector(
-          ".artist-header"
-        ).style.backgroundImage = `url('${artist.picture_xl}')`;
-      } else {
-        console.warn(
-          "L'API non ha restituito un'URL valido per la copertina dell'artista."
-        );
-      }
-    })
-    .catch((error) =>
-      console.error("Errore nel caricamento dell'artista:", error)
-    );
-}
-
-function loadArtistSongs(artistId) {
-  const apiUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=5`;
-
-  fetch(apiUrl)
-    .then((response) => response.json())
-    .then((data) => {
-      const songList = document.getElementById("song-list");
-      songList.innerHTML = "";
-
-      data.data.forEach((song, index) => {
-        const songItem = document.createElement("li");
-        songItem.classList.add(
-          "song-item",
-          "list-group-item",
-          "bg-transparent",
-          "text-white"
-        );
-
-        songItem.innerHTML = `
-          <div class="song-info">
-            <span>${index + 1}.</span>
-            <img src="${song.album.cover_small}" alt="${song.title}">
-            <div>
-              <span class="song-title">${song.title}</span>
-              <p class="song-plays">${song.rank.toLocaleString()} ascolti</p>
-            </div>
-          </div>
-          <span class="song-duration">${formatDuration(song.duration)}</span>
-        `;
-
-        songList.appendChild(songItem);
-      });
-    })
-    .catch((error) =>
-      console.error("Errore nel caricamento delle canzoni:", error)
-    );
-}
-
-function formatDuration(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const sec = seconds % 60;
-  return `${minutes}:${sec < 10 ? "0" : ""}${sec}`;
-}
-
-function loadArtistData(artistId) {
-  const apiUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`;
-
-  fetch(apiUrl)
-    .then((response) => response.json())
-    .then((artist) => {
-      console.log("Dati ricevuti dall'API:", artist);
-
-      document.getElementById("artist-name").innerText = artist.name;
-      document.getElementById(
-        "artist-listeners"
-      ).innerHTML = `Ascoltatori mensili: <span>${artist.nb_fan.toLocaleString()}</span>`;
-
-      if (artist.picture_xl) {
-        document.querySelector(
-          ".artist-header"
-        ).style.backgroundImage = `url('${artist.picture_xl}')`;
-      } else {
-        console.warn(
-          "L'API non ha restituito un'URL valido per la copertina dell'artista."
-        );
-      }
-
-      loadArtistSongs(artistId);
-    })
-    .catch((error) =>
-      console.error("Errore nel caricamento dell'artista:", error)
-    );
-}
-let songsLoaded = 5;
-let allSongs = [];
-
-function loadArtistSongs(artistId) {
-  const apiUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=25`;
-
-  fetch(apiUrl)
+  fetch(tracklistUrl)
     .then((response) => response.json())
     .then((data) => {
       allSongs = data.data;
       displaySongs();
     })
-    .catch((error) =>
-      console.error("Errore nel caricamento delle canzoni:", error)
-    );
+    .catch((error) => console.error("Errore nel caricamento della tracklist:", error));
 }
 
 function displaySongs() {
-  const songList = document.getElementById("song-list");
-  const loadMoreBtn = document.getElementById("load-more");
-  const showLessBtn = document.getElementById("show-less");
-
   songList.innerHTML = "";
 
   allSongs.slice(0, songsLoaded).forEach((song, index) => {
     const songItem = document.createElement("li");
-    songItem.classList.add(
-      "song-item",
-      "list-group-item",
-      "bg-transparent",
-      "text-white"
-    );
+    songItem.classList.add("song-item", "list-group-item", "bg-transparent", "text-white");
 
     songItem.innerHTML = `
       <div class="song-info">
@@ -217,82 +78,102 @@ function displaySongs() {
           <p class="song-plays">${song.rank.toLocaleString()} ascolti</p>
         </div>
       </div>
-      <span class="song-duration">${formatDuration(song.duration)}</span>
+      <span class="song-duration">${formatTime(song.duration)}</span>
     `;
 
     songList.appendChild(songItem);
   });
 
-  if (songsLoaded >= allSongs.length) {
-    loadMoreBtn.style.display = "none";
-    showLessBtn.style.display = "block";
-  } else {
-    loadMoreBtn.style.display = "block";
-    showLessBtn.style.display = "none";
-  }
+  loadMoreBtn.style.display = songsLoaded >= allSongs.length ? "none" : "block";
+  showLessBtn.style.display = songsLoaded >= allSongs.length ? "block" : "none";
 }
 
-document.getElementById("load-more").addEventListener("click", function () {
-  songsLoaded = 25;
+loadMoreBtn.addEventListener("click", function () {
+  songsLoaded += 5;
   displaySongs();
 });
 
-document.getElementById("show-less").addEventListener("click", function () {
+showLessBtn.addEventListener("click", function () {
   songsLoaded = 5;
   displaySongs();
 });
-function formatDuration(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const sec = seconds % 60;
-  return `${minutes}:${sec < 10 ? "0" : ""}${sec}`;
+
+function playTrack(selectedSong) {
+  if (!selectedSong) return;
+
+  audioElement.src = selectedSong.preview;
+  document.querySelector(".copertina-canzone").src = selectedSong.album.cover_medium;
+  document.querySelector(".barra-lettore p").textContent = selectedSong.title;
+  document.querySelector(".barra-lettore .text-secondary").textContent = selectedSong.artist.name;
+
+  const realDuration = selectedSong.duration;
+  tempoTotaleEl.innerText = formatTime(realDuration);
+  barraAvanzamento.max = 30;
+
+  audioElement.play();
+  isPlaying = true;
+  playBtn.classList.replace("bi-play-circle-fill", "bi-pause-circle-fill");
 }
 
-function formatDuration(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const sec = seconds % 60;
-  return `${minutes}:${sec < 10 ? "0" : ""}${sec}`;
-}
+songList.addEventListener("click", function (event) {
+  const songInfoDiv = event.target.closest(".song-info");
 
-document.getElementById("load-more").addEventListener("click", function () {
-  songsLoaded = 25;
-  displaySongs();
+  if (songInfoDiv) {
+    const songTitle = songInfoDiv.querySelector(".song-title").textContent;
+    const selectedSong = allSongs.find((song) => song.title === songTitle);
+
+    playTrack(selectedSong);
+  }
 });
 
-function loadArtistData(artistId) {
-  const apiUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`;
+audioElement.addEventListener("timeupdate", () => {
+  tempoCorrenteEl.innerText = formatTime(Math.floor(audioElement.currentTime));
+  barraAvanzamento.value = Math.floor(audioElement.currentTime);
+});
 
-  fetch(apiUrl)
-    .then((response) => response.json())
-    .then((artist) => {
-      console.log("Dati ricevuti dall'API:", artist);
+barraAvanzamento.addEventListener("input", () => {
+  audioElement.currentTime = barraAvanzamento.value;
+  tempoCorrenteEl.innerText = formatTime(barraAvanzamento.value);
+});
 
-      document.getElementById("artist-name").innerText = artist.name;
-      document.getElementById(
-        "artist-listeners"
-      ).innerHTML = `Ascoltatori mensili: <span>${artist.nb_fan.toLocaleString()}</span>`;
+audioElement.addEventListener("ended", () => {
+  isPlaying = false;
+  playBtn.classList.replace("bi-pause-circle-fill", "bi-play-circle-fill");
+  tempoCorrenteEl.innerText = formatTime(0);
+  barraAvanzamento.value = 0;
+});
 
-      if (artist.picture_xl) {
-        document.querySelector(
-          ".artist-header"
-        ).style.backgroundImage = `url('${artist.picture_xl}')`;
-      } else {
-        console.warn(
-          "L'API non ha restituito un'URL valido per la copertina dell'artista."
-        );
-      }
+playBtn.addEventListener("click", () => {
+  if (isPlaying) {
+    audioElement.pause();
+    isPlaying = false;
+    playBtn.classList.replace("bi-pause-circle-fill", "bi-play-circle-fill");
+  } else {
+    audioElement.play();
+    isPlaying = true;
+    playBtn.classList.replace("bi-play-circle-fill", "bi-pause-circle-fill");
+  }
+});
 
-      loadArtistSongs(artistId);
-    })
-    .catch((error) =>
-      console.error("Errore nel caricamento dell'artista:", error)
-    );
+audioElement.volume = volumeControl.value / 100;
+
+volumeControl.addEventListener("input", () => {
+  audioElement.volume = volumeControl.value / 100;
+});
+
+function playNextTrack() {
+  let currentIndex = allSongs.findIndex((song) => song.preview === audioElement.src);
+
+  if (currentIndex !== -1 && currentIndex < allSongs.length - 1) {
+    const nextSong = allSongs[currentIndex + 1];
+    playTrack(nextSong);
+  } else {
+    playTrack(allSongs[0]);
+  }
 }
 
-const defaultArtistId = loadArtistData(defaultArtistId);
+audioElement.addEventListener("ended", playNextTrack);
 
-document
-  .getElementById("toggleFriendlist")
-  .addEventListener("click", function () {
-    let col = document.getElementById("attivitaCol");
-    col.classList.toggle("scomparsa");
-  });
+document.getElementById("toggleFriendlist").addEventListener("click", function () {
+  document.getElementById("attivitaCol").classList.toggle("d-md-none");
+});

@@ -18,12 +18,7 @@
   padding: 0;
   height: 100vh;
   background: rgb(36, 36, 36);
-  background: linear-gradient(
-    0deg,
-    rgba(36, 36, 36, 1) 39%,
-    rgba(56, 56, 56, 1) 67%,
-    rgba(82, 82, 82, 1) 100%
-  );
+  background: linear-gradient(0deg, rgba(36, 36, 36, 1) 39%, rgba(56, 56, 56, 1) 67%, rgba(82, 82, 82, 1) 100%);
 }
 
 #attivitaCol {
@@ -79,11 +74,7 @@ h5 {
   display: flex;
   align-items: flex-end;
   padding: 40px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.8) 5%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 5%, rgba(0, 0, 0, 0) 100%);
 }
 
 .artist-background {
@@ -379,6 +370,12 @@ footer i:active {
   transform: scale(0.9);
   transition: 0.3s ease;
   color: #cfcfcf;
+}
+#copertina {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 .small-image-container {
   display: flex;
