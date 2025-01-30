@@ -1,142 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Album Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous
+    "
+    />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/album.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Album Details</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous
-    " />
-  <link rel="stylesheet" href="./assets/css/circular-font.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/album.css" />
-</head>
-
-<body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-2 d-none d-md-block p-0" id="sinistra">
-        <div class="d-flex flex-column menu h-100">
-          <div class="p-3 bg-black">
-            <ul id="navList" class="nav nav-pills flex-column mb-auto">
-              <li class="nav-item">
-                <a href="./index.html"
-                  class="nav-link text-white opacity-75 d-flex align-items-center gap-2 fw-semibold"
-                  aria-current="page">
-                  <i class="bi bi-house text-white opacity-75"></i>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="./search.html"
-                  class="nav-link text-white opacity-75 d-flex align-items-center gap-2 fw-semibold"><i
-                    class="bi bi-search text-white opacity-75"></i>
-                  Cerca
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link text-white opacity-75 fw-semibold"><i
-                    class="bi bi-list text-white opacity-75 pe-1"></i>
-                  La tua libreria
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link text-white opacity-75 fw-semibold"><i
-                    class="bi bi-plus-square-fill pe-1"></i>
-                  Crea
-                  playlist
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link text-white opacity-75 fw-semibold"><i class="bi bi-heart-fill pe-1"></i>
-                  Brani
-                  che ti
-                  piacciono </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link text-white opacity-75 fw-semibold"><i class="bi bi-bookmark-fill pe-1"></i>
-                  I
-                  tuoi
-                  episodi
-                </a>
-              </li>
-            </ul>
-            <hr />
-          </div>
-          <div class="listPlaylist p-3 text-secondary bg-black overflow-y-scroll mb-5">
-            <div class="listPersonal">
-              <ul class="list-group">
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">
-                  early stage emily syndrome (sett-ott 2022)
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2 d-none d-md-block p-0" id="sinistra">
+          <div class="d-flex flex-column menu h-100">
+            <div class="p-3 bg-black">
+              <ul id="navList" class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                  <a
+                    href="./index.html"
+                    class="nav-link text-white opacity-75 d-flex align-items-center gap-2 fw-semibold"
+                    aria-current="page"
+                  >
+                    <i class="bi bi-house text-white opacity-75"></i>
+                    Home
+                  </a>
                 </li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">Be The Young</li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">"..." cit. Kimiko (lug-ago
-                  2022)</li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">saggio vibes 🎭🎭</li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">
-                  main character energy (mag-giu 2022)
+                <li>
+                  <a
+                    href="./search.html"
+                    class="nav-link text-white opacity-75 d-flex align-items-center gap-2 fw-semibold"
+                    ><i class="bi bi-search text-white opacity-75"></i>
+                    Cerca
+                  </a>
                 </li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">that fucking mood 🔪🎭
+                <li>
+                  <a href="#" class="nav-link text-white opacity-75 fw-semibold"
+                    ><i class="bi bi-list text-white opacity-75 pe-1"></i>
+                    La tua libreria
+                  </a>
                 </li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">
-                  VEE, CARLOTTA E GIACOMO VANNO A BOSIO
+                <li>
+                  <a href="#" class="nav-link text-white opacity-75 fw-semibold"
+                    ><i class="bi bi-plus-square-fill pe-1"></i>
+                    Crea playlist
+                  </a>
                 </li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">
-                  An Emily Winchester kind of mood 🔪🖕
+                <li>
+                  <a href="#" class="nav-link text-white opacity-75 fw-semibold"
+                    ><i class="bi bi-heart-fill pe-1"></i> Brani che ti piacciono
+                  </a>
                 </li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">landing page (mar-apr
-                  2022)</li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">2021 lol</li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">
-                  cosa cazzo vuol dire questa affermazione (gen-feb 2022)
+                <li>
+                  <a href="#" class="nav-link text-white opacity-75 fw-semibold"
+                    ><i class="bi bi-bookmark-fill pe-1"></i>
+                    I tuoi episodi
+                  </a>
                 </li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">honey and glass (nov-dic
-                  2021)</li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">(Revenge) Training Arc 🎭
-                </li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">Lidia 🤙 Emily</li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">
-                  minecraft e nintendo switch (set-ott 2021)
-                </li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">
-                  silvano d'orba? I hardly know her (lug-ago 2021)
-                </li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">Culo 2021 🎼</li>
-                <li class="list-group-item text-white opacity-50 bg-transparent border-0">Fraq Quintale Mix</li>
               </ul>
+              <hr />
+            </div>
+            <div class="listPlaylist p-3 text-secondary bg-black overflow-y-scroll mb-5">
+              <div class="listPersonal">
+                <ul class="list-group">
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">
+                    early stage emily syndrome (sett-ott 2022)
+                  </li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">Be The Young</li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">
+                    "..." cit. Kimiko (lug-ago 2022)
+                  </li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">saggio vibes 🎭🎭</li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">
+                    main character energy (mag-giu 2022)
+                  </li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">that fucking mood 🔪🎭</li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">
+                    VEE, CARLOTTA E GIACOMO VANNO A BOSIO
+                  </li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">
+                    An Emily Winchester kind of mood 🔪🖕
+                  </li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">
+                    landing page (mar-apr 2022)
+                  </li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">2021 lol</li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">
+                    cosa cazzo vuol dire questa affermazione (gen-feb 2022)
+                  </li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">
+                    honey and glass (nov-dic 2021)
+                  </li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">
+                    (Revenge) Training Arc 🎭
+                  </li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">Lidia 🤙 Emily</li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">
+                    minecraft e nintendo switch (set-ott 2021)
+                  </li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">
+                    silvano d'orba? I hardly know her (lug-ago 2021)
+                  </li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">Culo 2021 🎼</li>
+                  <li class="list-group-item text-white opacity-50 bg-transparent border-0">Fraq Quintale Mix</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col overflow-y-scroll pt-3 px-0" id="parteCentrale">
-
-        <div class="row px-4 d-none d-md-flex">
-          <div class="col">
-            <a href="./index.html" class="text-white"><i class="bi bi-caret-left-square"></i></a>
-            <a href="#" class="text-white"><i class="bi bi-caret-right-square"></i></a>
-          </div>
-          <div class="col text-end d-flex align-items-center justify-content-end">
-            <div class="dropdown ">
-              <button class="btn btn-secondary dropdown-toggle rounded-pill bg-black" type="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Nome utente
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item text-white" href="#">Account</a></li>
-                <li><a class="dropdown-item text-white" href="#">Setting</a></li>
-                <li><a class="dropdown-item text-white" href="#">Logout</a></li>
-              </ul>
+        <div class="col overflow-y-scroll pt-3 px-0" id="parteCentrale">
+          <div class="row px-4 d-none d-md-flex">
+            <div class="col">
+              <a href="./index.html" class="text-white"><i class="bi bi-caret-left-square"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-caret-right-square"></i></a>
             </div>
-            <div class="ms-3 p-0 d-none d-md-block" id="btnMostraAmici">
-              <i class="bi bi-arrow-right-short h2 text-white"></i>
+            <div class="col text-end d-flex align-items-center justify-content-end">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle rounded-pill bg-black"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Nome utente
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-white" href="#">Account</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Setting</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Logout</a></li>
+                </ul>
+              </div>
+              <div class="ms-3 p-0 d-none d-md-block" id="btnMostraAmici">
+                <i class="bi bi-arrow-right-short h2 text-white"></i>
+              </div>
             </div>
           </div>
-        </div>
-        <div id="albumPresentation"
-          class="row pt-4 px-5 align-items-center align-items-md-end  flex-column flex-md-row">
-          <!--<div class="col-3">
+          <div
+            id="albumPresentation"
+            class="row pt-4 px-5 align-items-center align-items-md-end flex-column flex-md-row"
+          >
+            <!--<div class="col-3">
                         <img src="./assets/imgs/search/image-14.jpg" class="img-fluid" alt="" id="albumImg">
                     </div>
                     <div class="col-9 align-text-bottom">
@@ -159,41 +170,41 @@
             <p class="text-white mb-0 ps-2">Album • ${album.release_date}</p>
           </div>
         </div>-->
-        </div>
-        <div class="row flex-column mt-4 mx-0 px-4" id="songList">
-          <div class="col pt-4 d-flex justify-content-between align-items-center d-md-block px-0">
-            <div class="d-md-none">
-              <i class="bi bi-heart text-white fs-3 ps-3"></i>
-              <i class="bi bi-arrow-down-circle text-secondary fs-3 ps-3"></i>
-              <i class="bi bi-three-dots-vertical text-secondary fs-3 ps-3"></i>
-            </div>
-            <div class="d-md-none">
-              <i class="bi bi-shuffle text-secondary pe-3 fs-3"></i>
-              <button class="greenBtn">
-                <i class="bi bi-play-fill"></i>
-              </button>
-            </div>
-            <div class="d-none d-md-block">
-              <button class="greenBtn">
-                <i class="bi bi-play-fill"></i>
-              </button>
-              <i class="bi bi-heart text-white fs-3 ps-3 opacity-75"></i>
-              <i class="bi bi-arrow-down-circle text-white fs-3 ps-3 opacity-75"></i>
-              <i class="bi bi-three-dots text-white fs-3 ps-3 opacity-75"> </i>
-            </div>
           </div>
-          <div class="col pt-3">
-            <table class="table table-borderless songListTable">
-              <thead class="pb-4">
-                <tr>
-                  <th>#</th>
-                  <th>TITOLO</th>
-                  <th>RIPRODUZIONI</th>
-                  <th><i class="bi bi-clock"></i></th>
-                </tr>
-              </thead>
-              <tbody>
-                <!--<tr class="mb-2">
+          <div class="row flex-column mt-4 mx-0 px-4" id="songList">
+            <div class="col pt-4 d-flex justify-content-between align-items-center d-md-block px-0">
+              <div class="d-md-none">
+                <i class="bi bi-heart text-white fs-3 ps-3"></i>
+                <i class="bi bi-arrow-down-circle text-secondary fs-3 ps-3"></i>
+                <i class="bi bi-three-dots-vertical text-secondary fs-3 ps-3"></i>
+              </div>
+              <div class="d-md-none">
+                <i class="bi bi-shuffle text-secondary pe-3 fs-3"></i>
+                <button class="greenBtn">
+                  <i class="bi bi-play-fill"></i>
+                </button>
+              </div>
+              <div class="d-none d-md-block">
+                <button class="greenBtn">
+                  <i class="bi bi-play-fill"></i>
+                </button>
+                <i class="bi bi-heart text-white fs-3 ps-3 opacity-75"></i>
+                <i class="bi bi-arrow-down-circle text-white fs-3 ps-3 opacity-75"></i>
+                <i class="bi bi-three-dots text-white fs-3 ps-3 opacity-75"> </i>
+              </div>
+            </div>
+            <div class="col pt-3">
+              <table class="table table-borderless songListTable">
+                <thead class="pb-4">
+                  <tr>
+                    <th>#</th>
+                    <th>TITOLO</th>
+                    <th>RIPRODUZIONI</th>
+                    <th><i class="bi bi-clock"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!--<tr class="mb-2">
                                     <th class="pt-4">1</th>
                                     <td class="pb-0 pt-4">
                                         <div>
@@ -208,88 +219,88 @@
                                     <td class="pt-4">254.365</td>
                                     <td class="pt-4">2:35</td>
                                 </tr>-->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div class="destra col-2 d-none d-md-block bg-black" id="attivitaCol" id="attivitaCol">
-        <div class="d-flex justify-content-between align-items-center py-2">
-          <h5 class="mb-0">Attività amici</h5>
-          <div>
-            <i class="bi bi-person-plus text-white"></i>
-            <i class="bi bi-x-lg text-white ms-2" id="toggleFriendlist"></i>
-          </div>
-        </div>
-        <div class="amici d-flex flex-wrap">
-          <div class="Profilo rounded-circle">
-            <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
-          </div>
-          <div class="testoAmici me-auto">
-            <h5 class="text-white fw-bolder opacity-75">Charlie Hookham</h5>
-            <p class="text-white opacity-75">Autore • Album</p>
-            <div class="d-flex">
-              <i class="bi bi-vinyl text-white"></i>
-              <p class="text-white opacity-75">Canzone</p>
+                </tbody>
+              </table>
             </div>
           </div>
-          <div class="ora text-white">
-            <p class="opacity-75">4 ore</p>
-          </div>
         </div>
-        <div class="amici d-flex">
-          <div class="Profilo rounded-circle">
-            <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
-          </div>
-          <div class="testoAmici">
-            <h5 class="text-white fw-bolder opacity-75">lightdark02</h5>
-            <p class="text-white opacity-75">Autore • Album</p>
-            <div class="d-flex">
-              <i class="bi bi-music-note-beamed text-white"></i>
-              <p class="text-white opacity-75">Canzone</p>
+        <div class="destra col-2 d-none d-md-block bg-black" id="attivitaCol" id="attivitaCol">
+          <div class="d-flex justify-content-between align-items-center py-2">
+            <h5 class="mb-0">Attività amici</h5>
+            <div>
+              <i class="bi bi-person-plus text-white"></i>
+              <i class="bi bi-x-lg text-white ms-2" id="toggleFriendlist"></i>
             </div>
           </div>
-          <div class="ora text-white">
-            <p class="opacity-75">8 ore</p>
-          </div>
-        </div>
-        <div class="amici d-flex">
-          <div class="Profilo rounded-circle">
-            <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
-          </div>
-          <div class="testoAmici">
-            <h5 class="text-white fw-bolder opacity-75">Valeria Traverso</h5>
-            <p class="text-white opacity-75">Autore • Album</p>
-            <div class="d-flex">
-              <i class="bi bi-music-note-beamed text-white"></i>
-              <p class="text-white opacity-75">Canzone</p>
+          <div class="amici d-flex flex-wrap">
+            <div class="Profilo rounded-circle">
+              <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
+            </div>
+            <div class="testoAmici me-auto">
+              <h5 class="text-white fw-bolder opacity-75">Charlie Hookham</h5>
+              <p class="text-white opacity-75">Autore • Album</p>
+              <div class="d-flex">
+                <i class="bi bi-vinyl text-white"></i>
+                <p class="text-white opacity-75">Canzone</p>
+              </div>
+            </div>
+            <div class="ora text-white">
+              <p class="opacity-75">4 ore</p>
             </div>
           </div>
-          <div class="ora text-white">
-            <p class="opacity-75">3 giorni</p>
+          <div class="amici d-flex">
+            <div class="Profilo rounded-circle">
+              <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
+            </div>
+            <div class="testoAmici">
+              <h5 class="text-white fw-bolder opacity-75">lightdark02</h5>
+              <p class="text-white opacity-75">Autore • Album</p>
+              <div class="d-flex">
+                <i class="bi bi-music-note-beamed text-white"></i>
+                <p class="text-white opacity-75">Canzone</p>
+              </div>
+            </div>
+            <div class="ora text-white">
+              <p class="opacity-75">8 ore</p>
+            </div>
+          </div>
+          <div class="amici d-flex">
+            <div class="Profilo rounded-circle">
+              <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
+            </div>
+            <div class="testoAmici">
+              <h5 class="text-white fw-bolder opacity-75">Valeria Traverso</h5>
+              <p class="text-white opacity-75">Autore • Album</p>
+              <div class="d-flex">
+                <i class="bi bi-music-note-beamed text-white"></i>
+                <p class="text-white opacity-75">Canzone</p>
+              </div>
+            </div>
+            <div class="ora text-white">
+              <p class="opacity-75">3 giorni</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="newHome fixed-bottom col-12 d-block d-md-none">
-        <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-              <i class="bi bi-house text-white"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="bi bi-search text-white"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="bi bi-list text-white"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!-- <footer class="d-flex sticky-bottom z-1 position-absolute bg-black p-3">
+        <div class="newHome fixed-bottom col-12 d-block d-md-none">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                <i class="bi bi-house text-white"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-search text-white"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-list text-white"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- <footer class="d-flex sticky-bottom z-1 position-absolute bg-black p-3">
             <div class="musica">
               <div class="copertina"></div>
               <div class="nomeMusica"></div>
@@ -304,46 +315,49 @@
               <i class="bi bi-arrows-fullscreen text-white"></i>
             </div>
           </footer> -->
-      <footer class="fixed-bottom d-none d-md-block bg-black text-white py-2 position-absolute barra-lettore">
-        <div class="container-fluid d-flex align-items-center justify-content-between">
-          <div class="d-flex align-items-center">
-            <img src="" alt="copertina" class="img-fluid copertina-canzone" id="copertina" />
-            <div class="ms-2">
-              <p class="mb-0">---</p>
-              <div class="text-secondary">---</div>
+        <footer class="fixed-bottom d-none d-md-block bg-black text-white py-2 position-absolute barra-lettore">
+          <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <img src="" alt="copertina" class="img-fluid copertina-canzone" id="copertina" />
+              <div class="divPlayerAlbumText">
+                <div class="ms-2" id="testoPlayer">
+                  <p class="mb-0">---</p>
+                  <div class="text-secondary">---</div>
+                </div>
+              </div>
+              <i class="bi bi-heart ms-3"></i>
             </div>
-            <i class="bi bi-heart ms-3"></i>
-          </div>
 
-          <div class="d-flex flex-column align-items-center">
+            <div class="d-flex flex-column align-items-center">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-shuffle"></i>
+                <i class="bi bi-skip-start-fill"></i>
+                <i class="bi bi-play-circle-fill fs-3" id="play-btn"></i>
+                <i class="bi bi-skip-end-fill"></i>
+                <i class="bi bi-repeat"></i>
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-1">
+                <div id="tempo-corrente">--:--</div>
+                <input type="range" id="barra-avanzamento" min="0" max="100" value="0" />
+                <div id="tempo-totale">--:--</div>
+              </div>
+            </div>
+
             <div class="d-flex align-items-center gap-3">
-              <i class="bi bi-shuffle"></i>
-              <i class="bi bi-skip-start-fill"></i>
-              <i class="bi bi-play-circle-fill fs-3" id="play-btn"></i>
-              <i class="bi bi-skip-end-fill"></i>
-              <i class="bi bi-repeat"></i>
-            </div>
-            <div class="d-flex align-items-center gap-2 mt-1">
-              <div id="tempo-corrente">--:--</div>
-              <input type="range" id="barra-avanzamento" min="0" max="100" value="0" />
-              <div id="tempo-totale">--:--</div>
+              <i class="bi bi-volume-up"></i>
+              <input type="range" id="barra-volume" min="0" max="100" value="50" class="barra-volume" />
+              <i class="bi bi-arrows-fullscreen"></i>
             </div>
           </div>
-
-          <div class="d-flex align-items-center gap-3">
-            <i class="bi bi-volume-up"></i>
-            <input type="range" id="barra-volume" min="0" max="100" value="50" class="barra-volume" />
-            <i class="bi bi-arrows-fullscreen"></i>
-          </div>
-        </div>
-        <audio id="audio"></audio>
-      </footer>
+          <audio id="audio"></audio>
+        </footer>
+      </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="./assets/script/album.js"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/script/album.js"></script>
+  </body>
 </html>
