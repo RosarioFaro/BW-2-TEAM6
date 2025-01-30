@@ -21,11 +21,6 @@
   background: rgb(36, 36, 36);
   background: linear-gradient(0deg, rgba(36, 36, 36, 1) 39%, rgba(56, 56, 56, 1) 67%, rgba(82, 82, 82, 1) 100%);
 }
-.card-title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 #albumCarousel h6 {
   font-size: 1vw;
 }
@@ -97,8 +92,10 @@ h2 {
   border: none;
 }
 
-.card-title {
+.card-title,
+.card-text {
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -112,16 +109,21 @@ h2 {
   z-index: 1;
 }
 
-.card:hover .card-title {
+.card:hover .card-title,
+.card:hover .card-text {
   animation: scrollText 3s linear infinite;
 }
 
 @keyframes scrollText {
   0% {
     transform: translateX(0%);
+    text-overflow: initial;
+    overflow: visible;
   }
   100% {
     transform: translateX(-100%);
+    text-overflow: initial;
+    overflow: visible;
   }
 }
 
@@ -206,7 +208,12 @@ footer i:active {
   color: white;
   text-decoration: none;
   background: rgb(0, 0, 0);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5048144257703081) 0%, rgba(0, 0, 0, 0.7961309523809523) 33%, rgba(0, 0, 0, 1) 82%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5048144257703081) 0%,
+    rgba(0, 0, 0, 0.7961309523809523) 33%,
+    rgba(0, 0, 0, 1) 82%
+  );
 }
 
 @media only screen and (min-width: 768px) {

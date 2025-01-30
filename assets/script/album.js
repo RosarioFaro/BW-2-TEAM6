@@ -45,7 +45,7 @@ fetch(URL, {
           </div>            
         </div>
         <h2 id="albumTitle" class="text-white pb-2 px-0 d-md-none mb-0">${album.title}</h2>
-        <div class="col-12 col-md-8 align-text-bottom px-0">
+        <div class="col-12 col-md-8 align-text-bottom px-0 divNomeAlbum">
             <p class="text-white fw-bold mb-0 d-none d-md-block" id="album">ALBUM</p>
             <h2 id="albumTitle" class="text-white pb-3 ps-1 d-none d-md-block fw-bold">${album.title}</h2>
             <div class="d-flex align-items-center d-none d-md-flex">

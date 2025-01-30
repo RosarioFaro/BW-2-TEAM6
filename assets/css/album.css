@@ -6,7 +6,46 @@
   font-size: 5vw;
   font-family: "Circular", serif;
   font-weight: 900;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+.divNomeAlbum {
+  overflow: hidden;
+}
+
+#albumTitle:hover {
+  animation: scrollText 3s linear infinite;
+}
+
+.divPlayerAlbumText {
+  overflow: hidden;
+}
+
+#testoPlayer p {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#testoPlayer p:hover {
+  animation: scrollText 3s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+    text-overflow: initial;
+    overflow: visible;
+  }
+  100% {
+    transform: translateX(-150%);
+    text-overflow: initial;
+    overflow: visible;
+  }
+}
+
 #albumImg {
   box-shadow: 7px 2px 46px 4px rgba(0, 0, 0, 0.6);
 }
