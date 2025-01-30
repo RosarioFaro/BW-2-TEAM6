@@ -31,8 +31,48 @@ fetch(URL, {
     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
   },
 })
+  //cambio sfondo
   .then((response) => (response.ok ? response.json() : Promise.reject("Errore API")))
   .then((album) => {
+    function getAverageColor(imageUrl) {
+      const img = new Image();
+      img.src = imageUrl;
+      img.crossOrigin = "Anonymous";
+
+      img.onload = () => {
+        const colorThief = new ColorThief();
+        let dominantColor;
+
+        try {
+          dominantColor = colorThief.getColor(img);
+        } catch (err) {
+          console.error("Errore nell'estrazione del colore dominante:", err);
+          dominantColor = [0, 0, 0];
+        }
+
+        const rgbColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
+
+        const gradient = `linear-gradient(to bottom, ${rgbColor}, black)`;
+
+        document.body.style.backgroundImage = gradient;
+      };
+
+      img.onerror = (err) => {
+        console.error("Errore nel caricamento dell'immagine", err);
+      };
+    }
+
+    fetch(URL, {
+      headers: {
+        "x-rapidapi-key": "271b0957d2msh898cbca6a33a65ep19dba8jsn8a8a18b07f6c",
+        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+      },
+    })
+      .then((response) => (response.ok ? response.json() : Promise.reject("Errore API")))
+      .then((album) => {
+        getAverageColor(album.cover_medium);
+      });
+
     /* CREAZIONE INTERFACCIA GRAFICA ALBUM */
     const row = document.getElementById("albumPresentation");
     row.innerHTML = `
