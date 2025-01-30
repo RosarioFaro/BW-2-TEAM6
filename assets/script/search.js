@@ -134,3 +134,24 @@ images.forEach((imageUrl, index) => {
   const bannerId = `banner-${index}`;
   applyColorToBanner(imageUrl, bannerId);
 });
+
+function adjustStyles() {
+  const footer = document.querySelector("footer");
+  const consigliati = document.querySelector("#parteCentrale");
+  const listPlaylist = document.querySelector("#sinistra");
+
+  if (footer) {
+    const footerHeight = footer.offsetHeight;
+
+    if (consigliati) {
+      consigliati.style.height = `calc(100vh - ${footerHeight}px)`;
+    }
+
+    if (listPlaylist) {
+      listPlaylist.style.height = `calc(100vh - ${footerHeight}px)`;
+    }
+  }
+}
+
+window.addEventListener("resize", adjustStyles);
+window.addEventListener("load", adjustStyles);

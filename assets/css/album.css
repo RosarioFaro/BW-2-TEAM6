@@ -19,33 +19,6 @@
   animation: scrollText 3s linear infinite;
 }
 
-.divPlayerAlbumText {
-  overflow: hidden;
-}
-
-#testoPlayer p {
-  width: 150px;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-#testoPlayer p:hover {
-  animation: scrollText 3s linear infinite;
-}
-
-@keyframes scrollText {
-  0% {
-    transform: translateX(0%);
-    text-overflow: initial;
-    overflow: visible;
-  }
-  100% {
-    transform: translateX(-150%);
-    text-overflow: initial;
-    overflow: visible;
-  }
-}
-
 #albumImg {
   box-shadow: 7px 2px 46px 4px rgba(0, 0, 0, 0.6);
 }
@@ -67,13 +40,20 @@
 }
 .greenBtn {
   color: black;
-  background: green;
+  background: #1ed760;
   border: none;
   font-size: 1.3em;
   border-radius: 25px;
   width: 40px;
   height: 40px;
+  transition: 0.3s ease-in-out;
 }
+.greenBtn:hover {
+  background: #44eb7f;
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
 /* FORMATTAZIONE TABELLA CANZONI */
 thead {
   border-bottom: 1px solid grey;
@@ -153,7 +133,7 @@ tbody tr th:last-child {
 /* PLAYER */
 .barra-volume {
   width: 100px;
-  accent-color: #1db954;
+  accent-color: #1ed760;
 }
 
 .barra-lettore {
@@ -226,5 +206,35 @@ footer i:active {
   }
   .greenBtn {
     color: white;
+  }
+}
+
+.albumPlayer {
+  width: 50px;
+}
+.divPlayerAlbumText {
+  overflow: hidden;
+}
+
+#testoPlayer p {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#testoPlayer p:hover {
+  animation: scrollText 3s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+    text-overflow: initial;
+    overflow: visible;
+  }
+  100% {
+    transform: translateX(-150%);
+    text-overflow: initial;
+    overflow: visible;
   }
 }
