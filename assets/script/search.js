@@ -117,7 +117,7 @@ function applyColorToBanner(imageUrl, bannerId) {
   });
 }
 const images = [
-  "./assets/imgs/search/image-1.jpg",
+  "./assets/imgs/search/image-1.jpeg",
   "./assets/imgs/search/image-2.jpg",
   "./assets/imgs/search/image-3.jpg",
   "./assets/imgs/search/image-4.jpg",

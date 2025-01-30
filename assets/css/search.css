@@ -48,11 +48,19 @@ h5 {
 }
 .rotationIMG {
   top: 30%;
-  left: 55%;
+  left: 30%;
   transform: rotate(23deg);
   width: 200px;
 }
 .titolobanner {
   top: 20%;
   left: 0%;
+}
+@media only screen and (min-width: 650px) {
+  .rotationIMG {
+    top: 30%;
+    left: 60%;
+    transform: rotate(23deg);
+    width: 200px;
+  }
 }
