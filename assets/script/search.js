@@ -46,7 +46,6 @@ function ricercaMusica() {
         `;
         artistElement.innerHTML = artistContent;
 
-        // Ciclo sulle tracce dell'artista corrente
         artist.tracks.forEach((track) => {
           const trackElement = document.createElement("div");
           trackElement.classList.add("result-item");
@@ -74,3 +73,64 @@ function ricercaMusica() {
       risultatiContainer.innerHTML = "<p>Errore durante la ricerca, riprova.</p>";
     });
 }
+
+function getAverageColor(imageUrl, callback) {
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  const img = new Image();
+  img.src = imageUrl;
+
+  img.onload = function () {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0);
+
+    const imageData = ctx.getImageData(0, 0, img.width, img.height);
+    const data = imageData.data;
+
+    let r = 0,
+      g = 0,
+      b = 0;
+    for (let i = 0; i < data.length; i += 4) {
+      r += data[i];
+      g += data[i + 1];
+      b += data[i + 2];
+    }
+    const pixelCount = data.length / 4;
+    r = Math.floor(r / pixelCount);
+    g = Math.floor(g / pixelCount);
+    b = Math.floor(b / pixelCount);
+    callback(`rgb(${r}, ${g}, ${b})`);
+  };
+
+  img.onerror = function () {
+    console.error("Errore nel caricamento dell'immagine: " + imageUrl);
+  };
+}
+
+function applyColorToBanner(imageUrl, bannerId) {
+  getAverageColor(imageUrl, function (color) {
+    const banner = document.getElementById(bannerId);
+    if (banner) {
+      banner.style.backgroundColor = color;
+    }
+  });
+}
+const images = [
+  "./assets/imgs/search/image-1.jpg",
+  "./assets/imgs/search/image-2.jpg",
+  "./assets/imgs/search/image-3.jpg",
+  "./assets/imgs/search/image-4.jpg",
+  "./assets/imgs/search/image-5.jpg",
+  "./assets/imgs/search/image-6.jpg",
+  "./assets/imgs/search/image-7.jpg",
+  "./assets/imgs/search/image-8.jpg",
+  "./assets/imgs/search/image-9.jpg",
+  "./assets/imgs/search/image-10.jpg",
+  "./assets/imgs/search/image-11.jpg",
+  "./assets/imgs/search/image-12.jpg",
+];
+images.forEach((imageUrl, index) => {
+  const bannerId = `banner-${index}`;
+  applyColorToBanner(imageUrl, bannerId);
+});
