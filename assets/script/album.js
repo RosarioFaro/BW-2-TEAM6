@@ -1,21 +1,3 @@
-/* NASCONDERE LA BARRA DEGLI AMICI */
-document.getElementById("toggleFriendlist").addEventListener("click", function () {
-  let col = document.getElementById("attivitaCol");
-  col.classList.toggle("d-md-none");
-});
-
-document.getElementById("btnMostraAmici").addEventListener("click", function () {
-  let col = document.getElementById("attivitaCol");
-
-  col.classList.toggle("d-md-none");
-
-  if (col.classList.contains("d-md-none")) {
-    this.innerHTML = '<i class="bi bi-arrow-left-short h2 text-white"></i>';
-  } else {
-    this.innerHTML = '<i class="bi bi-arrow-right-short h2 text-white"></i>';
-  }
-});
-
 /* GESTIONE ELEMENTI PLAYER */
 const audio = document.getElementById("audio");
 const playBtn = document.getElementById("play-btn");
@@ -31,13 +13,14 @@ let isPlaying = false;
 let currentTrackIndex = 0;
 let trackElements = [];
 
+/* FORMATTAZIONE TEMPO IN MM:SS */
 function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
   const secs = Math.floor(seconds % 60);
   return `${minutes}:${secs.toString().padStart(2, "0")}`;
 }
 
-/* RACCOLTA DEI DATI DELLE TRACK */
+/* RACCOLTA DATI TRACCE DALL'API */
 const params = new URLSearchParams(window.location.search);
 const albumId = params.get("id");
 const URL = `https://deezerdevs-deezer.p.rapidapi.com/album/${albumId}`;
@@ -48,15 +31,9 @@ fetch(URL, {
     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
   },
 })
-  .then((response) => {
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error("Error fetching data from the API");
-    }
-  })
+  .then((response) => (response.ok ? response.json() : Promise.reject("Errore API")))
   .then((album) => {
-    console.log(album);
+    /* CREAZIONE INTERFACCIA GRAFICA ALBUM */
     const row = document.getElementById("albumPresentation");
     row.innerHTML = `
         <div class="col-3">
@@ -75,6 +52,7 @@ fetch(URL, {
             </div>
         </div>`;
 
+    /* CREAZIONE LISTA BRANI */
     const tbody = document.querySelector("tbody");
     const tracks = album.tracks.data;
     trackElements = [];
@@ -151,11 +129,13 @@ fetch(URL, {
       tempoCorrenteEl.textContent = formatTime(audio.currentTime);
     });
 
+    /* CONTROLLO MANUALE DELLA BARRA DI AVANZAMENTO */
     barraAvanzamento.addEventListener("input", () => {
       const newTime = (barraAvanzamento.value / 100) * audio.duration;
       audio.currentTime = newTime;
     });
 
+    /* GESTIONE PLAY/PAUSE */
     playBtn.addEventListener("click", () => {
       if (isPlaying) {
         audio.pause();
@@ -168,6 +148,7 @@ fetch(URL, {
       }
     });
 
+    /* CONTROLLO VOLUME */
     barraVolume.addEventListener("input", () => {
       audio.volume = barraVolume.value / 300;
     });
