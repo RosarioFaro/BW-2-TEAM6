@@ -142,6 +142,18 @@ fetch(URL, {
         </td>
         <td class="pt-4">${ele.rank.toLocaleString()}</td>
         <td class="pt-4">${formatTime(ele.duration)}</td>
+        <td class="pt-4 d-md-none">
+          <div class="dropdown d-inline-block">
+            <button id="dropdownBtnSongs" class=" btn dropdown-toggle p-0 align-baseline border-0" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+              <i class="bi bi-three-dots-vertical text-secondary fs-3 p-0"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item text-white" href="#">Mi piace</a></li>
+              <li><a class="dropdown-item text-white" href="#">Condividi</a></li>
+            </ul>
+          </div>
+        </td>
       `;
       tbody.appendChild(tr);
       trackElements.push(tr.querySelector(".play-track"));
