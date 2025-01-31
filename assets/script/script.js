@@ -275,7 +275,7 @@ function populateCarousel(albums) {
           </div>
           <div class="col-md-8">
             <h6 class="text-uppercase text-white">Album</h6>
-            <h2 class="text-white fw-bold overflow-hidden ">${album.title}</h2>
+            <div style="overflow: hidden"><h2 class="text-white overflow-hidden fw-bold">${album.title}</h2></div>
             <p class="text-white">${album.artist}</p>
             <p class="text-white">Scopri questo album!</p>
             <div class="d-flex gap-3">
