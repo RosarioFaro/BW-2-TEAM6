@@ -147,10 +147,10 @@ h5 {
   transform: scale(1.1);
 }
 
-.artist-buttons.btn-outline-light {
-  font-size: 16px;
-
-  border-radius: 1px;
+button.btn.btn-outline-light {
+  font-size: 13px;
+  border-radius: 5px;
+  padding: 8px 6px;
   font-weight: bold;
   border: 1px solid white;
   color: white;
