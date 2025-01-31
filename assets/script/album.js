@@ -14,8 +14,8 @@ document.getElementById("btnMostraAmici").addEventListener("click", function () 
 /* GESTIONE ELEMENTI PLAYER */
 const audio = document.getElementById("audio");
 const playBtn = document.getElementById("play-btn");
-const nextBtn = document.getElementById("next-btn"); // Pulsante avanti
-const prevBtn = document.getElementById("prev-btn"); // Pulsante indietro
+const nextBtn = document.getElementById("next-btn");
+const prevBtn = document.getElementById("prev-btn");
 const tempoCorrenteEl = document.getElementById("tempo-corrente");
 const barraAvanzamento = document.getElementById("barra-avanzamento");
 const tempoTotaleEl = document.getElementById("tempo-totale");
@@ -44,9 +44,54 @@ const API_HEADERS = {
   "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
 };
 
-fetch(URL, { headers: API_HEADERS })
+fetch(URL, {
+  headers: {
+    "x-rapidapi-key": "271b0957d2msh898cbca6a33a65ep19dba8jsn8a8a18b07f6c",
+    "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+  },
+})
+  //cambio sfondo
   .then((response) => (response.ok ? response.json() : Promise.reject("Errore API")))
   .then((album) => {
+    function getAverageColor(imageUrl) {
+      const img = new Image();
+      img.src = imageUrl;
+      img.crossOrigin = "Anonymous";
+
+      img.onload = () => {
+        const colorThief = new ColorThief();
+        let dominantColor;
+
+        try {
+          dominantColor = colorThief.getColor(img);
+        } catch (err) {
+          console.error("Errore nell'estrazione del colore dominante:", err);
+          dominantColor = [0, 0, 0];
+        }
+
+        const rgbColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
+
+        const gradient = `linear-gradient(to bottom, ${rgbColor}, black)`;
+
+        document.body.style.backgroundImage = gradient;
+      };
+
+      img.onerror = (err) => {
+        console.error("Errore nel caricamento dell'immagine", err);
+      };
+    }
+
+    fetch(URL, {
+      headers: {
+        "x-rapidapi-key": "271b0957d2msh898cbca6a33a65ep19dba8jsn8a8a18b07f6c",
+        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+      },
+    })
+      .then((response) => (response.ok ? response.json() : Promise.reject("Errore API")))
+      .then((album) => {
+        getAverageColor(album.cover_medium);
+      });
+
     /* CREAZIONE INTERFACCIA GRAFICA ALBUM */
     document.getElementById("albumPresentation").innerHTML = `
       <div class="col-12 col-md-4 px-0 d-flex">
@@ -106,20 +151,39 @@ fetch(URL, { headers: API_HEADERS })
     const playTrack = (index) => {
       if (index < 0 || index >= trackElements.length) return;
 
+      // Rimuove l'evidenziazione da tutte le tracce
+      document.querySelectorAll("h5").forEach((h5) => {
+        h5.classList.remove("playing-track");
+      });
+
+      // Imposta la nuova traccia in riproduzione
       const track = trackElements[index];
       audio.src = track.dataset.src;
       titoloCanzone.textContent = track.dataset.title;
       artistaCanzone.textContent = track.dataset.artist;
       copertinaCanzone.src = track.dataset.cover;
 
-      tempoTotaleEl.textContent = formatTime(track.dataset.duration); // Mostra durata reale
-      barraAvanzamento.max = 30; // Imposta il massimo a 30 secondi per la preview
+      tempoTotaleEl.textContent = formatTime(track.dataset.duration);
+      barraAvanzamento.max = 30;
 
       audio.play();
       isPlaying = true;
       playBtn.classList.replace("bi-play-circle-fill", "bi-pause-circle-fill");
       currentTrackIndex = index;
+
+      // Evidenzia la traccia attualmente in riproduzione
+      track.querySelector("h5").classList.add("playing-track");
     };
+
+    /* STILE CSS PER EVIDENZIARE LA TRACCIA */
+    const style = document.createElement("style");
+    style.innerHTML = `
+  .playing-track {
+    color: #1ed760; /* Verde di Spotify */
+    font-weight: bold;
+  }
+`;
+    document.head.appendChild(style);
 
     /* EVENTI CLICK SULLE TRACCE */
     document.addEventListener("click", (event) => {
@@ -129,22 +193,32 @@ fetch(URL, { headers: API_HEADERS })
       }
     });
 
-    /* AVANZA ALLA PROSSIMA TRACCIA */
+    /* AVANZA ALLA PROSSIMA TRACCIA O TORNA ALLA PRIMA */
     nextBtn.addEventListener("click", () => {
       if (currentTrackIndex < trackElements.length - 1) {
         playTrack(currentTrackIndex + 1);
+      } else {
+        playTrack(0); // Se siamo all'ultima, riparte dalla prima
       }
     });
 
-    /* TORNA ALLA TRACCIA PRECEDENTE */
+    /* TORNA ALLA TRACCIA PRECEDENTE O ALL'ULTIMA */
     prevBtn.addEventListener("click", () => {
       if (currentTrackIndex > 0) {
         playTrack(currentTrackIndex - 1);
+      } else {
+        playTrack(trackElements.length - 1); // Se siamo alla prima, torna all'ultima
       }
     });
 
-    /* PASSAGGIO AUTOMATICO ALLA TRACCIA SUCCESSIVA */
-    audio.addEventListener("ended", () => playTrack(currentTrackIndex + 1));
+    /* PASSAGGIO AUTOMATICO ALLA PROSSIMA TRACCIA */
+    audio.addEventListener("ended", () => {
+      if (currentTrackIndex < trackElements.length - 1) {
+        playTrack(currentTrackIndex + 1);
+      } else {
+        playTrack(0);
+      }
+    });
 
     /* AGGIORNAMENTO BARRA AVANZAMENTO */
     audio.addEventListener("timeupdate", () => {

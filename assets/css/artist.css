@@ -5,29 +5,9 @@
 
 #parteCentrale {
   padding: 0;
-  padding-bottom: 80px;
   height: 100vh;
   background: rgb(36, 36, 36);
-  background: linear-gradient(
-    0deg,
-    rgba(36, 36, 36, 1) 39%,
-    rgba(56, 56, 56, 1) 67%,
-    rgba(82, 82, 82, 1) 100%
-  );
-}
-
-
-/*Liste e sezioni */
-.listPersonal {
-  margin-bottom: 15em;
-}
-
-#consigliati {
-  margin-bottom: 5em;
-}
-
-#attivitaCol {
-  transition: transform 0.3s ease;
+  background: linear-gradient(0deg, rgba(36, 36, 36, 1) 39%, rgba(56, 56, 56, 1) 67%, rgba(82, 82, 82, 1) 100%);
 }
 
 /*Testi e titoli */
@@ -81,16 +61,16 @@ h5 {
   display: flex;
   align-items: center;
   font-size: 17px;
-  color: white; 
+  color: white;
   font-weight: bold;
-  margin-bottom: 5px; /
+  margin-bottom: 5px;
 }
 
 .verified-badge i {
   font-size: 20x;
-  margin-right: 5px; 
-  color: rgb(23, 108, 236); 
-  -webkit-text-stroke: 1px white; 
+  margin-right: 5px;
+  color: rgb(23, 108, 236);
+  -webkit-text-stroke: 1px white;
 }
 
 .artist-header {
@@ -244,7 +224,7 @@ h5 {
 .load-more-btn {
   display: block;
   width: 200px;
-  margin-bottom: 90px;
+  margin-bottom: 30px;
   padding: 12px 15px;
   font-size: 16px;
   font-weight: bold;
@@ -253,7 +233,7 @@ h5 {
   color: white;
   background: transparent;
   border-radius: 1px;
-  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
   border-radius: 10px;
 }
 
@@ -280,7 +260,6 @@ footer i:active {
   color: #cfcfcf;
 }
 
-
 /* Brani che ti piacciono */
 
 .liked-songs-section {
@@ -288,7 +267,7 @@ footer i:active {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 15px; 
+  gap: 15px;
 }
 
 .section-title {
@@ -321,7 +300,6 @@ footer i:active {
   align-items: center;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.1);
-
 }
 #artist-image-container img {
   width: 100%;
@@ -393,7 +371,6 @@ footer i:active {
   object-fit: cover;
 }
 
-
 @media (max-width: 767px) {
   .liked-songs-section {
     display: none !important;
@@ -406,7 +383,7 @@ footer i:active {
 @media (max-width: 767px) {
   .load-more-btn {
     display: block;
-    margin: 20px auto; 
+    margin: 20px auto;
     text-align: center;
   }
 
@@ -414,13 +391,13 @@ footer i:active {
     text-align: center;
   }
 
-  #load-more, #show-less {
+  #load-more,
+  #show-less {
     display: block;
-    margin: 20px auto; 
+    margin: 20px auto;
   }
 }
 @media (max-width: 767px) {
-  
   .load-more-btn {
     display: block;
     margin: 20px auto;
@@ -431,12 +408,12 @@ footer i:active {
     text-align: center;
   }
 
-  #load-more, #show-less {
+  #load-more,
+  #show-less {
     display: block;
     margin: 20px auto;
   }
 
-  
   .artist-buttons {
     display: flex;
     justify-content: center;
@@ -460,6 +437,49 @@ footer i:active {
   }
 
   .newHome .nav-link.active i {
-    color: #1db954; 
+    color: #1db954;
+  }
+}
+
+.overflow-y-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.overflow-y-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-y-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.774);
+  border-radius: 4px;
+}
+
+.albumPlayer {
+  width: 50px;
+}
+.divPlayerAlbumText {
+  overflow: hidden;
+}
+
+#testoPlayer p {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#testoPlayer p:hover {
+  animation: scrollText 3s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+    text-overflow: initial;
+    overflow: visible;
+  }
+  100% {
+    transform: translateX(-150%);
+    text-overflow: initial;
+    overflow: visible;
   }
 }

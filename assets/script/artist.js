@@ -1,23 +1,19 @@
-document
-  .getElementById("btnMostraAmici")
-  .addEventListener("click", function () {
-    let col = document.getElementById("attivitaCol");
+document.getElementById("btnMostraAmici").addEventListener("click", function () {
+  let col = document.getElementById("attivitaCol");
 
-    col.classList.toggle("d-md-none");
+  col.classList.toggle("d-md-none");
 
-    if (col.classList.contains("d-md-none")) {
-      this.innerHTML = '<i class="bi bi-arrow-left-short h2 text-white"></i>';
-    } else {
-      this.innerHTML = '<i class="bi bi-arrow-right-short h2 text-white"></i>';
-    }
-  });
+  if (col.classList.contains("d-md-none")) {
+    this.innerHTML = '<i class="bi bi-arrow-left-short h2 text-white"></i>';
+  } else {
+    this.innerHTML = '<i class="bi bi-arrow-right-short h2 text-white"></i>';
+  }
+});
 
-document
-  .getElementById("toggleFriendlist")
-  .addEventListener("click", function () {
-    let col = document.getElementById("attivitaCol");
-    col.classList.toggle("d-md-none");
-  });
+document.getElementById("toggleFriendlist").addEventListener("click", function () {
+  let col = document.getElementById("attivitaCol");
+  col.classList.toggle("d-md-none");
+});
 
 const playBtn = document.getElementById("play-btn");
 const tempoCorrenteEl = document.getElementById("tempo-corrente");
@@ -51,22 +47,16 @@ function loadArtistData(artistId) {
       ).innerHTML = `Ascoltatori mensili: <span>${artist.nb_fan.toLocaleString()}</span>`;
 
       if (artist.picture_xl) {
-        document.querySelector(
-          ".artist-header"
-        ).style.backgroundImage = `url('${artist.picture_xl}')`;
+        document.querySelector(".artist-header").style.backgroundImage = `url('${artist.picture_xl}')`;
 
         // Aggiunge l'immagine dell'artista nel contenitore circolare
-        const artistImageContainer = document.getElementById(
-          "artist-image-container"
-        );
+        const artistImageContainer = document.getElementById("artist-image-container");
         artistImageContainer.innerHTML = `<img src="${artist.picture_xl}" alt="${artist.name}">`;
       }
 
       loadArtistTracklist(artistId);
     })
-    .catch((error) =>
-      console.error("Errore nel caricamento dell'artista:", error)
-    );
+    .catch((error) => console.error("Errore nel caricamento dell'artista:", error));
 }
 
 function getArtistIdFromURL() {
@@ -90,9 +80,7 @@ function loadArtistTracklist(artistId) {
       allSongs = data.data;
       displaySongs();
     })
-    .catch((error) =>
-      console.error("Errore nel caricamento della tracklist:", error)
-    );
+    .catch((error) => console.error("Errore nel caricamento della tracklist:", error));
 }
 
 function displaySongs() {
@@ -100,12 +88,7 @@ function displaySongs() {
 
   allSongs.slice(0, songsLoaded).forEach((song, index) => {
     const songItem = document.createElement("li");
-    songItem.classList.add(
-      "song-item",
-      "list-group-item",
-      "bg-transparent",
-      "text-white"
-    );
+    songItem.classList.add("song-item", "list-group-item", "bg-transparent", "text-white");
 
     songItem.innerHTML = `
       <div class="song-info">
@@ -140,11 +123,9 @@ function playTrack(selectedSong) {
   if (!selectedSong) return;
 
   audioElement.src = selectedSong.preview;
-  document.querySelector(".copertina-canzone").src =
-    selectedSong.album.cover_medium;
+  document.querySelector(".copertina-canzone").src = selectedSong.album.cover_medium;
   document.querySelector(".barra-lettore p").textContent = selectedSong.title;
-  document.querySelector(".barra-lettore .text-secondary").textContent =
-    selectedSong.artist.name;
+  document.querySelector(".barra-lettore .text-secondary").textContent = selectedSong.artist.name;
 
   const realDuration = selectedSong.duration;
   tempoTotaleEl.innerText = formatTime(realDuration);
@@ -215,9 +196,7 @@ volumeControl.addEventListener("input", () => {
 });
 
 function playNextTrack() {
-  let currentIndex = allSongs.findIndex(
-    (song) => song.preview === audioElement.src
-  );
+  let currentIndex = allSongs.findIndex((song) => song.preview === audioElement.src);
 
   if (currentIndex !== -1 && currentIndex < allSongs.length - 1) {
     const nextSong = allSongs[currentIndex + 1];
@@ -227,11 +206,35 @@ function playNextTrack() {
   }
 }
 
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+
+function playNextTrack() {
+  let currentIndex = allSongs.findIndex((song) => song.preview === audioElement.src);
+
+  if (currentIndex !== -1 && currentIndex < allSongs.length - 1) {
+    playTrack(allSongs[currentIndex + 1]);
+  } else {
+    playTrack(allSongs[0]);
+  }
+}
+
+function playPreviousTrack() {
+  let currentIndex = allSongs.findIndex((song) => song.preview === audioElement.src);
+
+  if (currentIndex > 0) {
+    playTrack(allSongs[currentIndex - 1]);
+  } else {
+    playTrack(allSongs[allSongs.length - 1]);
+  }
+}
+
+nextBtn.addEventListener("click", playNextTrack);
+prevBtn.addEventListener("click", playPreviousTrack);
+
 audioElement.addEventListener("ended", playNextTrack);
 document.addEventListener("DOMContentLoaded", function () {
-  const followButton = document.querySelector(
-    ".artist-buttons .btn-outline-light"
-  );
+  const followButton = document.querySelector(".artist-buttons .btn-outline-light");
 
   followButton.addEventListener("click", function () {
     if (followButton.innerText.trim() === "FOLLOWING") {
@@ -241,3 +244,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+function adjustStyles() {
+  const footer = document.querySelector("footer");
+  const consigliati = document.querySelector("#parteCentrale");
+  const listPlaylist = document.querySelector("#sinistra");
+
+  if (footer) {
+    const footerHeight = footer.offsetHeight;
+
+    if (consigliati) {
+      consigliati.style.height = `calc(100vh - ${footerHeight}px)`;
+    }
+
+    if (listPlaylist) {
+      listPlaylist.style.height = `calc(100vh - ${footerHeight}px)`;
+    }
+  }
+}
+
+window.addEventListener("resize", adjustStyles);
+window.addEventListener("load", adjustStyles);
