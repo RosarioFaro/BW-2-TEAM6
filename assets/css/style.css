@@ -1,3 +1,8 @@
+* {
+  font-family: "Circular";
+  font-style: normal;
+}
+
 #sinistra {
   height: 100vh;
 }
