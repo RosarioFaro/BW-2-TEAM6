@@ -259,7 +259,38 @@
               <i class="bi bi-music-player ms-3 me-2 d-md-none"></i>
               <i class="bi bi-heart ms-3 d-none d-md-block"></i>
             </div>
+        <footer class="fixed-bottom bg-black text-white py-2 position-absolute barra-lettore">
+          <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <img
+                src="./assets/imgs/main/Spotify_Primary_Logo_RGB_Green.png"
+                alt="copertina"
+                class="img-fluid copertina-canzone albumPlayer"
+              />
+              <div class="divPlayerAlbumText">
+                <div class="ms-2" id="testoPlayer">
+                  <p class="mb-0" id="song-title">---</p>
+                  <div class="text-secondary" id="song-artist">---</div>
+                </div>
+              </div>
+              <i class="bi bi-music-player ms-3 me-2 d-md-none"></i>
+              <i class="bi bi-heart ms-3 d-none d-md-block"></i>
+            </div>
 
+            <div class="d-flex flex-column align-items-center">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-shuffle d-none d-md-block"></i>
+                <i class="bi bi-skip-start-fill d-none d-md-block" id="prev-btn"></i>
+                <i class="bi bi-play-circle-fill fs-3" id="play-btn"></i>
+                <i class="bi bi-skip-end-fill" id="next-btn"></i>
+                <i class="bi bi-repeat d-none d-md-block" id="repeat-btn"></i>
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-1">
+                <div id="tempo-corrente" class="d-none d-md-block">--:--</div>
+                <input type="range" id="barra-avanzamento" class="d-none d-md-block" min="0" max="200" value="0" />
+                <div id="tempo-totale" class="d-none d-md-block">--:--</div>
+              </div>
+            </div>
             <div class="d-flex flex-column align-items-center">
               <div class="d-flex align-items-center gap-3">
                 <i class="bi bi-shuffle d-none d-md-block"></i>
@@ -280,10 +311,46 @@
               <input type="range" id="barra-volume" min="0" max="100" value="5" class="barra-volume" />
               <i class="bi bi-arrows-fullscreen d-none d-md-block"></i>
             </div>
+            <div class="d-flex align-items-center gap-3">
+              <i class="bi bi-volume-up d-none d-md-block"></i>
+              <input type="range" id="barra-volume" min="0" max="100" value="5" class="barra-volume" />
+              <i class="bi bi-arrows-fullscreen d-none d-md-block"></i>
+            </div>
 
             <audio id="audio"></audio>
           </div>
+            <audio id="audio"></audio>
+          </div>
 
+          <div class="newHome d-block d-md-none bg-transparent mt-2">
+            <ul class="nav justify-content-center">
+              <li class="nav-item">
+                <a class="nav-link active" href="/index.html">
+                  <i class="bi bi-house text-white"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/search.html">
+                  <i class="bi bi-search text-white"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-list text-white"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/script/script.js"></script>
+  </body>
           <div class="newHome d-block d-md-none bg-transparent mt-2">
             <ul class="nav justify-content-center">
               <li class="nav-item">
