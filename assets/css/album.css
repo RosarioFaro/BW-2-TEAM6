@@ -252,6 +252,12 @@ footer i:active {
     overflow: visible;
   }
 }
+.topArrows {
+  opacity: 50%;
+}
+.topArrows:hover {
+  opacity: 100%;
+}
 .bi-heart {
   color: white;
   opacity: 50%;
