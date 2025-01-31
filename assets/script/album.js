@@ -107,7 +107,7 @@ fetch(URL, {
         <p class="text-white fw-bold mb-0 d-none d-md-block">ALBUM</p>
         <h2 class="text-white pb-3 ps-1 d-none d-md-block fw-bold">${album.title}</h2>
         <div class="d-flex align-items-center">
-          <img src="${album.artist.picture_xl}" alt="" class="rounded-circle roundedImgCentral">
+          <img src="${album.artist.cover_xl}" alt="" class="rounded-circle roundedImgCentral">
           <p class="text-white mb-0 ps-2">
             <a href="artist.html?id=${album.artist.id}" class="text-white text-decoration-none">
               <span>${album.artist.name}</span>

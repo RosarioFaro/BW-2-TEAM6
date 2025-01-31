@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function fetchPopularAlbums() {
-  const keywords = ["relax", "chill", "lofi"];
+  const keywords = ["relax", "lofi", "pop"];
   const randomKeyword = keywords[Math.floor(Math.random() * keywords.length)];
   const url = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomKeyword}`;
 
@@ -200,13 +200,105 @@ function createAlbumItem(album) {
   albumElement.innerHTML = `
       <div class="w-25">
           <a href="album.html?id=${album.id}">
-              <img src="${album.cover_medium}" alt="${album.title}" class="img-fluid rounded-start" />
+              <img src="${album.cover_medium}" alt="${album.title}" class="img-fluid rounded-start albumCard" />
           </a>
       </div>
-      <div>
-          <p class="text-white">${album.title}</p>
+      <div class="overflow-hidden">
+          <p class="text-white playlistTitle">${album.title}</p>
       </div>
   `;
 
   this.appendChild(albumElement);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  fetchAlbumsForCarousel();
+});
+
+function fetchAlbumsForCarousel() {
+  const keywords = ["rock", "metal", "phonk"];
+  const randomKeyword = keywords[Math.floor(Math.random() * keywords.length)];
+  const url = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomKeyword}`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Dati ricevuti dall'API:", data);
+
+      if (!data || !data.data || data.data.length === 0) {
+        console.error("Nessun album trovato");
+        return;
+      }
+
+      const uniqueAlbums = [];
+      const albumIds = new Set();
+
+      data.data.forEach((track) => {
+        if (track.album && track.album.id && track.album.cover_medium && track.artist && track.artist.name) {
+          if (!albumIds.has(track.album.id)) {
+            albumIds.add(track.album.id);
+            uniqueAlbums.push({
+              id: track.album.id,
+              title: track.album.title,
+              cover: track.album.cover_medium,
+              artist: track.artist.name,
+            });
+          }
+        }
+      });
+
+      if (uniqueAlbums.length === 0) {
+        console.error("Nessun album valido trovato");
+        return;
+      }
+
+      uniqueAlbums.sort(() => Math.random() - 0.5);
+      const selectedAlbums = uniqueAlbums.slice(0, 5);
+
+      populateCarousel(selectedAlbums);
+    })
+    .catch((error) => console.error("Errore nel caricamento degli album:", error));
+}
+
+function populateCarousel(albums) {
+  const carouselInner = document.querySelector("#albumCarousel .carousel-inner");
+  carouselInner.innerHTML = "";
+
+  albums.forEach((album, index) => {
+    const isActive = index === 0 ? "active" : "";
+
+    const carouselItem = `
+      <div class="carousel-item ${isActive}">
+        <div class="row album-card p-4 align-items-center">
+          <div class="col-md-4">
+            <img src="${album.cover}" alt="${album.title}" class="img-fluid rounded" />
+          </div>
+          <div class="col-md-8">
+            <h6 class="text-uppercase text-white">Album</h6>
+            <h2 class="text-white fw-bold overflow-hidden ">${album.title}</h2>
+            <p class="text-white">${album.artist}</p>
+            <p class="text-white">Scopri questo album!</p>
+            <div class="d-flex gap-3">
+              <button class="btn btn-success px-4 play-album" data-id="${album.id}">Play</button>
+              <button class="btn btn-outline-light px-4">Salva</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    carouselInner.innerHTML += carouselItem;
+  });
+
+  document.querySelectorAll(".play-album").forEach((button) => {
+    button.addEventListener("click", function () {
+      const albumId = this.getAttribute("data-id");
+      console.log("Album selezionato ID:", albumId);
+      if (albumId) {
+        window.location.href = `album.html?id=${albumId}`;
+      } else {
+        alert("Errore: ID dell'album non trovato.");
+      }
+    });
+  });
 }
