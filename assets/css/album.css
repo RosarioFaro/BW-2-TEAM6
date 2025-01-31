@@ -131,11 +131,6 @@ tbody tr th:last-child {
 }
 
 /* PLAYER */
-.barra-volume {
-  width: 100px;
-  accent-color: #1ed760;
-}
-
 .barra-lettore {
   border-top: 1px solid #222;
 }

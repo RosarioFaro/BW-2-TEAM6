@@ -181,7 +181,12 @@ h5 {
 }
 .barra-volume {
   width: 100px;
-  accent-color: #1db954;
+  accent-color: #00a039;
+}
+
+#barra-avanzamento {
+  cursor: pointer;
+  accent-color: #00a039;
 }
 
 .barra-lettore {
