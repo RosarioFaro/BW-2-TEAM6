@@ -1,431 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Album Details</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous
-    "
-    />
-    <link rel="stylesheet" href="./assets/css/circular-font.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/album.css" />
-    <script src="https://cdn.jsdelivr.net/npm/colorthief@2.3.0/dist/color-thief.min.js"></script>
-  </head>
 
-  <body class="bg-dark">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-2 d-none d-md-block p-0" id="sinistra">
-          <div class="d-flex flex-column h-100">
-            <div class="p-3 bg-black">
-              <ul id="navList" class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                  <a
-                    href="/index.html"
-                    class="nav-link text-white d-flex align-items-center gap-2 active bg-transparent fw-semibold opacity-75"
-                    aria-current="page"
-                  >
-                    <i class="bi bi-house text-white"></i>
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="./search.html"
-                    class="nav-link text-white d-flex align-items-center gap-2 fw-semibold opacity-75"
-                    ><i class="bi bi-search text-white"></i>
-                    Cerca
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="nav-link text-white fw-semibold opacity-75"
-                    ><i class="bi bi-list text-white"></i>
-                    La tua libreria
-                  </a>
-                </li>
-                <br />
-                <li>
-                  <a href="#" class="nav-link text-white fw-semibold opacity-75"
-                    ><i class="bi bi-plus-square-fill"></i>
-                    Crea playlist
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="nav-link text-white fw-semibold opacity-75"
-                    ><i class="bi bi-heart-fill"></i> Brani che ti piacciono
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="nav-link text-white fw-semibold opacity-75"
-                    ><i class="bi bi-bookmark-fill"></i> I tuoi episodi
-                  </a>
-                </li>
-              </ul>
-              <hr />
-            </div>
-            <div class="listPlaylist p-3 text-white bg-black overflow-y-scroll">
-              <div class="listPersonal">
-                <ul class="list-group">
-                  <li class="list-group-item text-white bg-transparent border-0 opacity-50">
-                    <a href="/album.html?id=684330261">Half Horse Half Man</a>
-                  </li>
-                  <li class="list-group-item text-white bg-transparent border-0 opacity-50">
-                    <a href="/album.html?id=6575789">Random Access Memories</a>
-                  </li>
-                  <li class="list-group-item text-white bg-transparent border-0 opacity-50">
-                    <a href="/album.html?id=302127">Discovery</a>
-                  </li>
-                  <li class="list-group-item text-white bg-transparent border-0 opacity-50">
-                    <a href="/album.html?id=72819">Thriller 25 Super Deluxe Edition</a>
-                  </li>
-                  <li class="list-group-item text-white bg-transparent border-0 opacity-50">
-                    <a href="/album.html?id=9410100">Back In Black</a>
-                  </li>
-                  <li class="list-group-item text-white bg-transparent border-0 opacity-50">
-                    <a href="/album.html?id=562858582">Don't Touch My Clogs</a>
-                  </li>
-                  <li class="list-group-item text-white bg-transparent border-0 opacity-50">
-                    <a href="/album.html?id=562399111">Dim Sum Paradise</a>
-                  </li>
-                  <li class="list-group-item text-white bg-transparent border-0 opacity-50">
-                    <a href="/album.html?id=339090597">Giga Chad EPIC ORCHESTRA</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col overflow-y-scroll" id="parteCentrale">
-          <div class="row px-4 d-none d-md-flex align-items-center">
-            <div class="col">
-              <a href="./index.html" class="text-white text-decoration-none">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="topArrows bg-black rounded-circle"
-                  width="22"
-                  height="22"
-                  fill="currentColor"
-                  viewBox="0 0 320 512"
-                >
-                  <path
-                    d="M34.5 239L228.9 44.7c9.4-9.4 24.6-9.4 33.9 0l22.7 22.7c9.4 9.4 9.4 24.5 0 33.9L131.5 256l154 154.8c9.3 9.4 9.3 24.5 0 33.9l-22.7 22.7c-9.4 9.4-24.6 9.4-33.9 0L34.5 273c-9.4-9.4-9.4-24.6 0-33.9z"
-                  />
-                </svg>
-              </a>
-              <a href="#" class="text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="topArrows bg-black rounded-circle"
-                  width="22"
-                  height="22"
-                  fill="currentColor"
-                  viewBox="0 0 320 512"
-                >
-                  <path
-                    d="M285.5 273L91.1 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.7-22.7c-9.4-9.4-9.4-24.5 0-33.9L188.5 256 34.5 101.3c-9.3-9.4-9.3-24.5 0-33.9l22.7-22.7c9.4-9.4 24.6-9.4 33.9 0L285.5 239c9.4 9.4 9.4 24.6 0 33.9z"
-                  />
-                </svg>
-              </a>
-            </div>
-            <div class="col text-end d-flex align-items-center justify-content-end">
-              <div class="dropdown">
-                <button
-                  class="btn btn-secondary dropdown-toggle rounded-pill bg-black"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    src="./assets/imgs/the-new-metal-gear-solid-movie-v0-0s4s89k8mcbe1.webp"
-                    class="rounded-circle"
-                    alt="user"
-                    width="50"
-                    height="50"
-                    style="object-fit: cover; object-position: top"
-                  />
-                  Team 6
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item text-white" href="#">Account</a></li>
-                  <li><a class="dropdown-item text-white" href="#">Setting</a></li>
-                  <li><a class="dropdown-item text-white" href="#">Logout</a></li>
-                </ul>
-              </div>
-              <div class="ms-3 p-0 d-none d-md-block" id="btnMostraAmici">
-                <i class="bi bi-arrow-right-short h2 text-white"></i>
-              </div>
-            </div>
-          </div>
-          <div
-            id="albumPresentation"
-            class="row pt-4 px-5 align-items-center align-items-md-end flex-column flex-md-row"
-          ></div>
-          <div class="row flex-column mt-4 mx-0 px-4" id="songList">
-            <div class="col pt-4 d-flex justify-content-between align-items-center d-md-block">
-              <div class="d-md-none">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="30"
-                  fill="currentColor"
-                  class="bi bi-heart ms-3"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
-                  />
-                </svg>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="30"
-                  fill="currentColor"
-                  class="bi bi-arrow-down-circle ms-3"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"
-                  />
-                </svg>
-                <div class="dropdown d-inline-block align-middle">
-                  <button
-                    id="dotsVerticalBtn"
-                    class="btn dropdown-toggle py-0 align-baseline border-0"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots-vertical text-white opacity-50 fs-3"></i>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item text-white" href="#">Mi piace</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Condividi</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="d-md-none">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="30"
-                  fill="currentColor"
-                  class="bi bi-shuffle me-4"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"
-                  />
-                  <path
-                    d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192"
-                  />
-                </svg>
-                <button class="greenBtn">
-                  <i class="bi bi-play-fill"></i>
-                </button>
-              </div>
-              <div class="d-none d-md-block">
-                <button class="greenBtn">
-                  <i class="bi bi-play-fill"></i>
-                </button>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="30"
-                  fill="currentColor"
-                  class="bi bi-heart ms-3"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
-                  />
-                </svg>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="30"
-                  fill="currentColor"
-                  class="bi bi-arrow-down-circle ms-3"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"
-                  />
-                </svg>
-                <div class="dropdown d-inline-block align-middle">
-                  <button
-                    id="dotsBtn"
-                    class="btn dropdown-toggle ms-2 py-0 align-baseline border-0"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots fs-3 text-white opacity-75"> </i>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item text-white" href="#">Aggiungi alla tua libreria</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Condividi</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col pt-3">
-              <table class="table table-borderless songListTable">
-                <thead class="pb-4">
-                  <tr>
-                    <th>#</th>
-                    <th>TITOLO</th>
-                    <th>RIPRODUZIONI</th>
-                    <th><i class="bi bi-clock"></i></th>
-                  </tr>
-                </thead>
-                <tbody></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Album Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous
+    " />
+  <link rel="stylesheet" href="./assets/css/circular-font.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/album.css" />
+  <script src="https://cdn.jsdelivr.net/npm/colorthief@2.3.0/dist/color-thief.min.js"></script>
+</head>
 
-        <div class="destra col-2 d-none d-md-block bg-black" id="attivitaCol">
-          <div class="d-flex justify-content-between align-items-center py-2">
-            <h5 class="mb-0">Attività amici</h5>
-            <div>
-              <i class="bi bi-person-plus text-white"></i>
-              <i class="bi bi-x-lg text-white ms-2" id="toggleFriendlist"></i>
-            </div>
-          </div>
-
-          <div class="amici d-flex flex-wrap">
-            <div class="Profilo rounded-circle">
-              <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-11.jpg" alt="pfp" />
-            </div>
-            <div class="testoAmici me-auto">
-              <h5 class="text-white opacity-75 fw-bolder">Charlie Hookham</h5>
-              <p class="text-white opacity-75">Autore • Album</p>
-              <div class="d-flex align-items-center">
-                <i class="bi bi-vinyl text-white"></i>
-                <p class="text-white opacity-75">Canzone</p>
-              </div>
-            </div>
-            <div class="ora text-white opacity-75">
-              <p>4 ore</p>
-            </div>
-          </div>
-
-          <div class="amici d-flex">
-            <div class="Profilo rounded-circle">
-              <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
-            </div>
-            <div class="testoAmici">
-              <h5 class="text-white opacity-75 fw-bolder">lightdark02</h5>
-              <p class="text-white opacity-75">Autore • Album</p>
-              <div class="d-flex align-items-center">
-                <i class="bi bi-music-note-beamed text-white"></i>
-                <p class="text-white opacity-75">Canzone</p>
-              </div>
-            </div>
-            <div class="ora text-white opacity-75">
-              <p>8 ore</p>
-            </div>
-          </div>
-
-          <div class="amici d-flex">
-            <div class="Profilo rounded-circle">
-              <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-9.jpg" alt="pfp" />
-            </div>
-            <div class="testoAmici">
-              <h5 class="text-white opacity-75 fw-bolder">Valeria Traverso</h5>
-              <p class="text-white opacity-75">Autore • Album</p>
-              <div class="d-flex align-items-center">
-                <i class="bi bi-music-note-beamed text-white"></i>
-                <p class="text-white opacity-75">Canzone</p>
-              </div>
-            </div>
-            <div class="ora text-white opacity-75">
-              <p>3 giorni</p>
-            </div>
-          </div>
-        </div>
-
-        <footer class="fixed-bottom bg-black text-white py-2 position-absolute barra-lettore">
-          <div class="container-fluid d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center">
-              <img
-                src="./assets/imgs/main/Spotify_Primary_Logo_RGB_Green.png"
-                alt="copertina"
-                class="img-fluid copertina-canzone albumPlayer"
-              />
-              <div class="divPlayerAlbumText">
-                <div class="ms-2" id="testoPlayer">
-                  <p class="mb-0" id="song-title">---</p>
-                  <div class="text-secondary" id="song-artist">---</div>
-                </div>
-              </div>
-              <i class="bi bi-music-player ms-3 me-2 d-md-none"></i>
-              <i class="bi bi-heart ms-3 d-none d-md-block"></i>
-            </div>
-
-            <div class="d-flex flex-column align-items-center">
-              <div class="d-flex align-items-center gap-3">
-                <i class="bi bi-shuffle d-none d-md-block"></i>
-                <i class="bi bi-skip-start-fill d-none d-md-block" id="prev-btn"></i>
-                <i class="bi bi-play-circle-fill fs-3" id="play-btn"></i>
-                <i class="bi bi-skip-end-fill" id="next-btn"></i>
-                <i class="bi bi-repeat d-none d-md-block" id="repeat-btn"></i>
-              </div>
-              <div class="d-flex align-items-center gap-2 mt-1">
-                <div id="tempo-corrente" class="d-none d-md-block">--:--</div>
-                <input type="range" id="barra-avanzamento" class="d-none d-md-block" min="0" max="200" value="0" />
-                <div id="tempo-totale" class="d-none d-md-block">--:--</div>
-              </div>
-            </div>
-
-            <div class="d-flex align-items-center gap-3">
-              <i class="bi bi-volume-up d-none d-md-block"></i>
-              <input type="range" id="barra-volume" min="0" max="100" value="5" class="barra-volume" />
-              <i class="bi bi-arrows-fullscreen d-none d-md-block"></i>
-            </div>
-
-            <audio id="audio"></audio>
-          </div>
-
-          <div class="newHome d-block d-md-none bg-transparent mt-2">
-            <ul class="nav justify-content-center">
+<body class="bg-dark">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2 d-none d-md-block p-0" id="sinistra">
+        <div class="d-flex flex-column h-100">
+          <div class="p-3 bg-black">
+            <ul id="navList" class="nav nav-pills flex-column mb-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="/index.html">
+                <a href="/index.html"
+                  class="nav-link text-white d-flex align-items-center gap-2 active bg-transparent fw-semibold opacity-75"
+                  aria-current="page">
                   <i class="bi bi-house text-white"></i>
+                  Home
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/search.html">
-                  <i class="bi bi-search text-white"></i>
+              <li>
+                <a href="./search.html"
+                  class="nav-link text-white d-flex align-items-center gap-2 fw-semibold opacity-75"><i
+                    class="bi bi-search text-white"></i>
+                  Cerca
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <i class="bi bi-list text-white"></i>
+              <li>
+                <a href="#" class="nav-link text-white fw-semibold opacity-75"><i class="bi bi-list text-white"></i>
+                  La tua libreria
+                </a>
+              </li>
+              <br />
+              <li>
+                <a href="#" class="nav-link text-white fw-semibold opacity-75"><i class="bi bi-plus-square-fill"></i>
+                  Crea playlist
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white fw-semibold opacity-75"><i class="bi bi-heart-fill"></i> Brani
+                  che ti piacciono
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white fw-semibold opacity-75"><i class="bi bi-bookmark-fill"></i> I
+                  tuoi episodi
                 </a>
               </li>
             </ul>
+            <hr />
           </div>
-        </footer>
+          <div class="listPlaylist p-3 text-white bg-black overflow-y-scroll">
+            <div class="listPersonal">
+              <ul class="list-group">
+                <li class="list-group-item text-white bg-transparent border-0 opacity-50">
+                  <a href="/album.html?id=684330261">Half Horse Half Man</a>
+                </li>
+                <li class="list-group-item text-white bg-transparent border-0 opacity-50">
+                  <a href="/album.html?id=6575789">Random Access Memories</a>
+                </li>
+                <li class="list-group-item text-white bg-transparent border-0 opacity-50">
+                  <a href="/album.html?id=302127">Discovery</a>
+                </li>
+                <li class="list-group-item text-white bg-transparent border-0 opacity-50">
+                  <a href="/album.html?id=72819">Thriller 25 Super Deluxe Edition</a>
+                </li>
+                <li class="list-group-item text-white bg-transparent border-0 opacity-50">
+                  <a href="/album.html?id=9410100">Back In Black</a>
+                </li>
+                <li class="list-group-item text-white bg-transparent border-0 opacity-50">
+                  <a href="/album.html?id=562858582">Don't Touch My Clogs</a>
+                </li>
+                <li class="list-group-item text-white bg-transparent border-0 opacity-50">
+                  <a href="/album.html?id=562399111">Dim Sum Paradise</a>
+                </li>
+                <li class="list-group-item text-white bg-transparent border-0 opacity-50">
+                  <a href="/album.html?id=339090597">Giga Chad EPIC ORCHESTRA</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+      <div class="col overflow-y-scroll" id="parteCentrale">
+        <div class="row px-4 d-none d-md-flex align-items-center">
+          <div class="col">
+            <a href="./index.html" class="text-white text-decoration-none">
+              <svg xmlns="http://www.w3.org/2000/svg" class="topArrows bg-black rounded-circle" width="22" height="22"
+                fill="currentColor" viewBox="0 0 320 512">
+                <path
+                  d="M34.5 239L228.9 44.7c9.4-9.4 24.6-9.4 33.9 0l22.7 22.7c9.4 9.4 9.4 24.5 0 33.9L131.5 256l154 154.8c9.3 9.4 9.3 24.5 0 33.9l-22.7 22.7c-9.4 9.4-24.6 9.4-33.9 0L34.5 273c-9.4-9.4-9.4-24.6 0-33.9z" />
+              </svg>
+            </a>
+            <a href="#" class="text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="topArrows bg-black rounded-circle" width="22" height="22"
+                fill="currentColor" viewBox="0 0 320 512">
+                <path
+                  d="M285.5 273L91.1 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.7-22.7c-9.4-9.4-9.4-24.5 0-33.9L188.5 256 34.5 101.3c-9.3-9.4-9.3-24.5 0-33.9l22.7-22.7c9.4-9.4 24.6-9.4 33.9 0L285.5 239c9.4 9.4 9.4 24.6 0 33.9z" />
+              </svg>
+            </a>
+          </div>
+          <div class="col text-end d-flex align-items-center justify-content-end">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle rounded-pill bg-black" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="./assets/imgs/the-new-metal-gear-solid-movie-v0-0s4s89k8mcbe1.webp" class="rounded-circle"
+                  alt="user" width="50" height="50" style="object-fit: cover; object-position: top" />
+                Team 6
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item text-white" href="#">Account</a></li>
+                <li><a class="dropdown-item text-white" href="#">Setting</a></li>
+                <li><a class="dropdown-item text-white" href="#">Logout</a></li>
+              </ul>
+            </div>
+            <div class="ms-3 p-0 d-none d-md-block" id="btnMostraAmici">
+              <i class="bi bi-arrow-right-short h2 text-white"></i>
+            </div>
+          </div>
+        </div>
+        <div id="albumPresentation" class="row pt-4 px-5 align-items-center align-items-md-end flex-column flex-md-row">
+        </div>
+        <div class="row flex-column mt-4 mx-0 px-4" id="songList">
+          <div class="col pt-4 d-flex justify-content-between align-items-center d-md-block">
+            <div class="d-md-none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                class="bi bi-heart ms-3" viewBox="0 0 16 16">
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                class="bi bi-arrow-down-circle ms-3" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+              </svg>
+              <div class="dropdown d-inline-block align-middle">
+                <button id="dotsVerticalBtn" class="btn dropdown-toggle py-0 align-baseline border-0" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots-vertical text-white opacity-50 fs-3"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-white" href="#">Mi piace</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Condividi</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="d-md-none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                class="bi bi-shuffle me-4" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5" />
+                <path
+                  d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192" />
+              </svg>
+              <button class="greenBtn">
+                <i class="bi bi-play-fill"></i>
+              </button>
+            </div>
+            <div class="d-none d-md-block">
+              <button class="greenBtn" style="padding-top: 0.2em;">
+                <i class="bi bi-play-fill"></i>
+              </button>
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                class="bi bi-heart ms-3" viewBox="0 0 16 16">
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                class="bi bi-arrow-down-circle ms-3" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+              </svg>
+              <div class="dropdown d-inline-block align-middle">
+                <button id="dotsBtn" class="btn dropdown-toggle ms-2 py-0 align-baseline border-0" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots fs-3 text-white opacity-75"> </i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-white" href="#">Aggiungi alla tua libreria</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Condividi</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col pt-3">
+            <table class="table table-borderless songListTable">
+              <thead class="pb-4">
+                <tr>
+                  <th>#</th>
+                  <th>TITOLO</th>
+                  <th>RIPRODUZIONI</th>
+                  <th><i class="bi bi-clock"></i></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
 
-    <script src="./assets/script/album.js"></script>
-  </body>
+      <div class="destra col-2 d-none d-md-block bg-black" id="attivitaCol">
+        <div class="d-flex justify-content-between align-items-center py-2">
+          <h5 class="mb-0">Attività amici</h5>
+          <div>
+            <i class="bi bi-person-plus text-white"></i>
+            <i class="bi bi-x-lg text-white ms-2" id="toggleFriendlist"></i>
+          </div>
+        </div>
+
+        <div class="amici d-flex flex-wrap">
+          <div class="Profilo rounded-circle">
+            <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-11.jpg" alt="pfp" />
+          </div>
+          <div class="testoAmici me-auto">
+            <h5 class="text-white opacity-75 fw-bolder">Charlie Hookham</h5>
+            <p class="text-white opacity-75">Autore • Album</p>
+            <div class="d-flex align-items-center">
+              <i class="bi bi-vinyl text-white"></i>
+              <p class="text-white opacity-75">Canzone</p>
+            </div>
+          </div>
+          <div class="ora text-white opacity-75">
+            <p>4 ore</p>
+          </div>
+        </div>
+
+        <div class="amici d-flex">
+          <div class="Profilo rounded-circle">
+            <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-3.jpg" alt="pfp" />
+          </div>
+          <div class="testoAmici">
+            <h5 class="text-white opacity-75 fw-bolder">lightdark02</h5>
+            <p class="text-white opacity-75">Autore • Album</p>
+            <div class="d-flex align-items-center">
+              <i class="bi bi-music-note-beamed text-white"></i>
+              <p class="text-white opacity-75">Canzone</p>
+            </div>
+          </div>
+          <div class="ora text-white opacity-75">
+            <p>8 ore</p>
+          </div>
+        </div>
+
+        <div class="amici d-flex">
+          <div class="Profilo rounded-circle">
+            <img class="rounded-circle img-fluid" src="./assets/imgs/main/image-9.jpg" alt="pfp" />
+          </div>
+          <div class="testoAmici">
+            <h5 class="text-white opacity-75 fw-bolder">Valeria Traverso</h5>
+            <p class="text-white opacity-75">Autore • Album</p>
+            <div class="d-flex align-items-center">
+              <i class="bi bi-music-note-beamed text-white"></i>
+              <p class="text-white opacity-75">Canzone</p>
+            </div>
+          </div>
+          <div class="ora text-white opacity-75">
+            <p>3 giorni</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="fixed-bottom bg-black text-white py-2 position-absolute barra-lettore">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <img src="./assets/imgs/main/Spotify_Primary_Logo_RGB_Green.png" alt="copertina"
+              class="img-fluid copertina-canzone albumPlayer" />
+            <div class="divPlayerAlbumText">
+              <div class="ms-2" id="testoPlayer">
+                <p class="mb-0" id="song-title">---</p>
+                <div class="text-secondary" id="song-artist">---</div>
+              </div>
+            </div>
+            <i class="bi bi-music-player ms-3 me-2 d-md-none"></i>
+            <i class="bi bi-heart ms-3 d-none d-md-block"></i>
+          </div>
+
+          <div class="d-flex flex-column align-items-center">
+            <div class="d-flex align-items-center gap-3">
+              <i class="bi bi-shuffle d-none d-md-block"></i>
+              <i class="bi bi-skip-start-fill d-none d-md-block" id="prev-btn"></i>
+              <i class="bi bi-play-circle-fill fs-3" id="play-btn"></i>
+              <i class="bi bi-skip-end-fill" id="next-btn"></i>
+              <i class="bi bi-repeat d-none d-md-block" id="repeat-btn"></i>
+            </div>
+            <div class="d-flex align-items-center gap-2 mt-1">
+              <div id="tempo-corrente" class="d-none d-md-block">--:--</div>
+              <input type="range" id="barra-avanzamento" class="d-none d-md-block" min="0" max="200" value="0" />
+              <div id="tempo-totale" class="d-none d-md-block">--:--</div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <i class="bi bi-volume-up d-none d-md-block"></i>
+            <input type="range" id="barra-volume" min="0" max="100" value="5" class="barra-volume" />
+            <i class="bi bi-arrows-fullscreen d-none d-md-block"></i>
+          </div>
+
+          <audio id="audio"></audio>
+        </div>
+
+        <div class="newHome d-block d-md-none bg-transparent mt-2">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="/index.html">
+                <i class="bi bi-house text-white"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/search.html">
+                <i class="bi bi-search text-white"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-list text-white"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <script src="./assets/script/album.js"></script>
+</body>
+
 </html>

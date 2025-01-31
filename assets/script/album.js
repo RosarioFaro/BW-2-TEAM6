@@ -95,10 +95,10 @@ fetch(URL, {
     /* CREAZIONE INTERFACCIA GRAFICA ALBUM */
     document.getElementById("albumPresentation").innerHTML = `
        <div class="col-12 col-md-4 px-0 d-flex">
-         <div class="d-md-none ">
+         <div class="d-md-none col-2 ">
            <a href="./index.html"><i class="bi bi-arrow-left text-white"></i></a>
          </div>
-         <div class="col-11 px-md-0 px-4 ">
+         <div class="col-10 px-md-0 px-4 ">
            <img src="${album.cover_medium}" class="img-fluid " alt="" id="albumImg">
          </div>            
        </div>
