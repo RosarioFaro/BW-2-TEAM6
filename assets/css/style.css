@@ -78,12 +78,11 @@ h2 {
 .dropdown button {
   font-size: 0.9vw;
 }
-.bi-caret-left-square {
-  font-size: 1.4vw;
-  margin-right: 0.5em;
+.topArrows {
+  opacity: 50%;
 }
-.bi-caret-right-square {
-  font-size: 1.4vw;
+.topArrows:hover {
+  opacity: 100%;
 }
 h2 {
   color: white;
@@ -219,12 +218,7 @@ footer i:active {
   color: white;
   text-decoration: none;
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.5048144257703081) 0%,
-    rgba(0, 0, 0, 0.7961309523809523) 33%,
-    rgba(0, 0, 0, 1) 82%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5048144257703081) 0%, rgba(0, 0, 0, 0.7961309523809523) 33%, rgba(0, 0, 0, 1) 82%);
 }
 
 @media only screen and (min-width: 768px) {

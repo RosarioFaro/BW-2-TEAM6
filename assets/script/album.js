@@ -98,7 +98,7 @@ fetch(URL, {
          <div class="d-md-none ">
            <a href="./index.html"><i class="bi bi-arrow-left text-white"></i></a>
          </div>
-         <div class="col-11 px-md-0 px-sm-4 ">
+         <div class="col-11 px-md-0 px-4 ">
            <img src="${album.cover_medium}" class="img-fluid " alt="" id="albumImg">
          </div>            
        </div>
@@ -108,7 +108,7 @@ fetch(URL, {
          <h2 class="text-white pb-3 ps-1 d-none d-md-block fw-bold">${album.title}</h2>
          <div class="d-flex align-items-center">
            <img src="${album.artist.picture}" alt="" class="rounded-circle roundedImgCentral" id="artistImg" style="cursor: pointer;">
-           <p class="text-white mb-0 ps-2">
+           <p class="albumParag text-white mb-0 ps-2">
              <a href="artist.html?id=${album.artist.id}" class="text-white text-decoration-none">
                <span>${album.artist.name}</span>
              </a> • ${album.release_date} • ${album.tracks.data.length} brani
