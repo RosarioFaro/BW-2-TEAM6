@@ -167,12 +167,16 @@ fetch(URL, {
     const playTrack = (index) => {
       if (index < 0 || index >= trackElements.length) return;
 
-      // Rimuove l'evidenziazione da tutte le tracce
-      document.querySelectorAll("h5").forEach((h5) => {
-        h5.classList.remove("playing-track");
+      document.querySelectorAll(".playing-track").forEach((el) => {
+        el.classList.remove("playing-track");
       });
 
-      // Imposta la nuova traccia in riproduzione
+      document.querySelectorAll(".track-number").forEach((el, i) => {
+        el.innerHTML = i + 1;
+      });
+
+      document.querySelectorAll(".equalizer").forEach((eq) => eq.remove());
+
       const track = trackElements[index];
       audio.src = track.dataset.src;
       titoloCanzone.textContent = track.dataset.title;
@@ -187,8 +191,21 @@ fetch(URL, {
       playBtn.classList.replace("bi-play-circle-fill", "bi-pause-circle-fill");
       currentTrackIndex = index;
 
-      // Evidenzia la traccia attualmente in riproduzione
       track.querySelector("h5").classList.add("playing-track");
+
+      const trackNumber = track.closest("tr").querySelector("th");
+      trackNumber.classList.add("track-number");
+      trackNumber.innerHTML = "";
+
+      const equalizer = document.createElement("div");
+      equalizer.classList.add("equalizer");
+      for (let i = 0; i < 3; i++) {
+        const bar = document.createElement("div");
+        bar.classList.add("bar");
+        equalizer.appendChild(bar);
+      }
+
+      trackNumber.appendChild(equalizer);
     };
 
     /* STILE CSS PER EVIDENZIARE LA TRACCIA */
@@ -249,7 +266,18 @@ fetch(URL, {
 
     /* CONTROLLO PLAY/PAUSA */
     playBtn.addEventListener("click", () => {
-      isPlaying ? audio.pause() : audio.play();
+      if (isPlaying) {
+        audio.pause();
+        document.querySelectorAll(".bar").forEach((bar) => {
+          bar.style.animationPlayState = "paused";
+        });
+      } else {
+        audio.play();
+        document.querySelectorAll(".bar").forEach((bar) => {
+          bar.style.animationPlayState = "running";
+        });
+      }
+
       isPlaying = !isPlaying;
       playBtn.classList.toggle("bi-play-circle-fill");
       playBtn.classList.toggle("bi-pause-circle-fill");

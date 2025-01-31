@@ -89,10 +89,11 @@ function displaySongs() {
   allSongs.slice(0, songsLoaded).forEach((song, index) => {
     const songItem = document.createElement("li");
     songItem.classList.add("song-item", "list-group-item", "bg-transparent", "text-white");
+    songItem.dataset.trackNumber = index + 1;
 
     songItem.innerHTML = `
       <div class="song-info">
-        <span>${index + 1}.</span>
+        <span class="track-number">${index + 1}.</span> 
         <img src="${song.album.cover_small}" alt="${song.title}">
         <div>
           <span class="song-title">${song.title}</span>
@@ -134,6 +135,26 @@ function playTrack(selectedSong) {
   audioElement.play();
   isPlaying = true;
   playBtn.classList.replace("bi-play-circle-fill", "bi-pause-circle-fill");
+
+  document.querySelectorAll(".song-item").forEach((item) => {
+    item.classList.remove("playing");
+    item.querySelector(".track-number").innerHTML = item.dataset.trackNumber;
+  });
+
+  const currentSongItem = [...document.querySelectorAll(".song-item")].find(
+    (item) => item.querySelector(".song-title").textContent === selectedSong.title
+  );
+
+  if (currentSongItem) {
+    currentSongItem.classList.add("playing");
+    currentSongItem.querySelector(".track-number").innerHTML = `
+      <div class="equalizer">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    `;
+  }
 }
 
 songList.addEventListener("click", function (event) {
