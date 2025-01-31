@@ -98,7 +98,8 @@ h2 {
 }
 
 .card-title,
-.card-text {
+.card-text,
+.overflow-hidden {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

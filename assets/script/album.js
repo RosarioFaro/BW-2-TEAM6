@@ -94,27 +94,31 @@ fetch(URL, {
 
     /* CREAZIONE INTERFACCIA GRAFICA ALBUM */
     document.getElementById("albumPresentation").innerHTML = `
-      <div class="col-12 col-md-4 px-0 d-flex">
-        <div class="d-md-none ">
-          <a href="./index.html"><i class="bi bi-arrow-left text-white"></i></a>
-        </div>
-        <div class="col-11 px-md-0 px-sm-4 ">
-          <img src="${album.cover_medium}" class="img-fluid " alt="" id="albumImg">
-        </div>            
-      </div>
-      <h2 id="albumTitle" class="text-white pb-2 px-0 d-md-none mb-0">${album.title}</h2>
-      <div class="col-12 col-md-8 px-0">
-        <p class="text-white fw-bold mb-0 d-none d-md-block">ALBUM</p>
-        <h2 class="text-white pb-3 ps-1 d-none d-md-block fw-bold">${album.title}</h2>
-        <div class="d-flex align-items-center">
-          <img src="${album.artist.cover_xl}" alt="" class="rounded-circle roundedImgCentral">
-          <p class="text-white mb-0 ps-2">
-            <a href="artist.html?id=${album.artist.id}" class="text-white text-decoration-none">
-              <span>${album.artist.name}</span>
-            </a> • ${album.release_date} • ${album.tracks.data.length} brani
-          </p>                
-        </div>
-      </div>`;
+       <div class="col-12 col-md-4 px-0 d-flex">
+         <div class="d-md-none ">
+           <a href="./index.html"><i class="bi bi-arrow-left text-white"></i></a>
+         </div>
+         <div class="col-11 px-md-0 px-sm-4 ">
+           <img src="${album.cover_medium}" class="img-fluid " alt="" id="albumImg">
+         </div>            
+       </div>
+       <h2 id="albumTitle" class="text-white pb-2 px-0 d-md-none mb-0">${album.title}</h2>
+       <div class="col-12 col-md-8 px-0">
+         <p class="text-white fw-bold mb-0 d-none d-md-block">ALBUM</p>
+         <h2 class="text-white pb-3 ps-1 d-none d-md-block fw-bold">${album.title}</h2>
+         <div class="d-flex align-items-center">
+           <img src="${album.artist.picture}" alt="" class="rounded-circle roundedImgCentral" id="artistImg" style="cursor: pointer;">
+           <p class="text-white mb-0 ps-2">
+             <a href="artist.html?id=${album.artist.id}" class="text-white text-decoration-none">
+               <span>${album.artist.name}</span>
+             </a> • ${album.release_date} • ${album.tracks.data.length} brani
+           </p>                
+         </div>
+       </div>`;
+
+    document.getElementById("artistImg").addEventListener("click", function () {
+      window.location.href = `artist.html?id=${album.artist.id}`;
+    });
 
     /* CREAZIONE LISTA BRANI */
     const tbody = document.querySelector("tbody");

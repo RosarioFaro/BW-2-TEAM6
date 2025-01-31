@@ -11,7 +11,12 @@
   padding: 0;
   height: 100vh;
   background: rgb(36, 36, 36);
-  background: linear-gradient(0deg, rgba(36, 36, 36, 1) 39%, rgba(56, 56, 56, 1) 67%, rgba(82, 82, 82, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(36, 36, 36, 1) 39%,
+    rgba(56, 56, 56, 1) 67%,
+    rgba(82, 82, 82, 1) 100%
+  );
 }
 
 /*Testi e titoli */
@@ -480,4 +485,50 @@ footer i:active {
     text-overflow: initial;
     overflow: visible;
   }
+}
+@media (max-width: 767px) {
+  .artist-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .artist-buttons i {
+    font-size: 24px;
+    color: white;
+  }
+}
+@media (max-width: 767px) {
+  .artist-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .artist-buttons .d-md-none {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Distanza uniforme tra gli elementi */
+  }
+
+  .artist-buttons i {
+    font-size: 24px;
+    color: white;
+  }
+
+  .artist-buttons .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.btn-success.btn-lg i {
+  color: black;
 }

@@ -94,7 +94,7 @@ function fetchAlbum(apiUrl, nvolte) {
 
         randomObjects.forEach((album) => {
           const cardDiv = document.createElement("div");
-          cardDiv.className = "col-5 col-md-4 col-lg-2 p-0 overflow-hidden cardDiv";
+          cardDiv.className = "col-5 col-md-2 col-lg-2 p-0 overflow-hidden cardDiv";
 
           cardDiv.innerHTML = `
           <div class="card">
