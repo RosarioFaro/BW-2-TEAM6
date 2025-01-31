@@ -74,7 +74,7 @@ barraAvanzamento.addEventListener("change", () => {
   }
 });
 
-const URL = "https://striveschool-api.herokuapp.com/api/deezer/search?q=rock";
+const URL = "https://striveschool-api.herokuapp.com/api/deezer/search?q=caparezza";
 
 function fetchAlbum(apiUrl, nvolte) {
   fetch(apiUrl)
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function fetchAlbumsForCarousel() {
-  const keywords = ["rock", "metal", "phonk"];
+  const keywords = ["pop", "metal", "lofi"];
   const randomKeyword = keywords[Math.floor(Math.random() * keywords.length)];
   const url = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomKeyword}`;
 
