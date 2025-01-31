@@ -154,3 +154,59 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  fetchPopularAlbums();
+});
+
+function fetchPopularAlbums() {
+  const keywords = ["relax", "chill", "lofi"];
+  const randomKeyword = keywords[Math.floor(Math.random() * keywords.length)];
+  const url = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomKeyword}`;
+
+  const albumContainer = document.getElementById("playlist");
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      if (!data || !data.data || data.data.length === 0) {
+        console.error("Nessun album trovato");
+        return;
+      }
+
+      const albums = [];
+      const albumIds = new Set();
+
+      data.data.forEach((track) => {
+        if (!albumIds.has(track.album.id)) {
+          albumIds.add(track.album.id);
+          albums.push(track.album);
+        }
+      });
+
+      albums.sort(() => Math.random() - 0.5);
+
+      albums.slice(0, 6).forEach((album) => createAlbumItem.call(albumContainer, album));
+
+      console.log(`Ricerca effettuata con parola chiave: ${randomKeyword}`);
+    })
+    .catch((error) => console.error("Errore:", error));
+}
+
+function createAlbumItem(album) {
+  const albumElement = document.createElement("div");
+  albumElement.classList.add("Hplaylist", "d-flex", "align-items-center", "rounded", "col-6", "col-md-4", "mb-3");
+
+  albumElement.innerHTML = `
+      <div class="w-25">
+          <a href="album.html?id=${album.id}">
+              <img src="${album.cover_medium}" alt="${album.title}" class="img-fluid rounded-start" />
+          </a>
+      </div>
+      <div>
+          <p class="text-white">${album.title}</p>
+      </div>
+  `;
+
+  this.appendChild(albumElement);
+}
